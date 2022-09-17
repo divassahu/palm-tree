@@ -1,0 +1,35 @@
+Q6) What if we call Java run() method directly instead start() method?
+----------------------------------------------------------------------
+
+When we call start() method on the thread it causes the thread state to change to "Runnable". It’s the Java Virtual Machine that calls the run method of that thread to actually start the thread execution, run() method is not called directly. In this post you'll see what happens if run() method is called directly in Java multi-threading.
+
+What if run method is called directly
+If run() method is called directly instead of start() method in Java code, run() method will be treated as a normal overridden method of the thread class (or runnable interface). This run method will be executed with in the context of the current thread not in a new thread.
+
+It’s the start() method that spawns a new thread and schedules the thread with the JVM. The JVM will let the newly spawned thread execute run() method when the resources and CPU are ready. So not calling the start method and directly calling the run() method will mean a new thread object is not created and run() method will run as a normal overridden method.
+
+Calling run method directly example
+Let’s create a class and spawn two threads and cause some delay in the execution if they are real threads then there will be context switching – while one thread is not executing another thread will execute. When start method is not called no new threads are created thus there won’t be any context switching and the execution will be sequential.
+
+public class MyThreadClass extends Thread{
+  @Override
+  public void run(){
+    System.out.println("In run method " + Thread.currentThread().getName());
+    for(int i = 0; i < 5 ; i++){
+      System.out.println("i - " + i);
+      try {
+        Thread.sleep(200);
+      } catch (InterruptedException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+      }
+    }
+  }
+    
+  public static void main(String[] args) {
+    MyThreadClass mc1 = new MyThreadClass(“MyThread1”);
+    MyThreadClass mc2 = new MyThreadClass();
+    mc1.run();
+    mc2.run();
+  }
+}
