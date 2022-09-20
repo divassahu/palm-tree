@@ -1,0 +1,25 @@
+Q2) What is the difference between ArrayList and Array?
+-------------------------------------------------------
+
+The main difference between Array and ArrayList is that Array is a fixed length data structure while ArrayList is a variable length Collection class.
+
+Array-
+------
+1)An array is a data structure with a fixed length. 
+
+2)It helps to store data elements that belong to the same data type.
+
+3)it is required to have many elements of the same data type. 
+
+4)For example, assume a program to store marks of students. It is not possible to create variables for each. Array is an alternative to this issue. Using an array, the programmer can store multiple data elements of the same type as a single unit.
+
+ArrayList-
+----------
+1) ArrayList is a variable length Collection class. 
+
+2) we can create an ArrayList data structure. The ArrayList class further implements the List interface. 
+
+3) An array is of a fixed length, so it is not possible to store more elements than the defined array size. However, an array list is dynamic. 
+
+4) we can add or remove elements as required. When using ArrayList, the programmer can use predefined methods such as add, remove, etc. Furthermore, it can contain duplicate elements, and it also maintains the data inserted order. An example program is as follows.
+

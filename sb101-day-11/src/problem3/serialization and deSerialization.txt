@@ -1,0 +1,44 @@
+Q3) What is the Serialization and deseiralization in Java?
+----------------------------------------------------------
+Serialization in Java is a mechanism of writing the state of an object into a byte-stream. It is mainly used in Hibernate, RMI, JPA, EJB and JMS technologies.
+
+The reverse operation of serialization is called deserialization where byte-stream is converted into an object. The serialization and deserialization process is platform-independent, it means you can serialize an object on one platform and deserialize it on a different platform.
+
+For serializing the object, we call the writeObject() method of ObjectOutputStream class, and for deserialization we call the readObject() method of ObjectInputStream class.
+
+ex-
+	import java.io.*;
+
+class Link implements Serializable {
+
+    private String commons;
+    protected int favorites;
+
+    public Link(String commons, int favorites) {
+        this.commons = commons;
+        this.favorites = favorites;
+    }
+
+    public void printLink() {
+        System.out.println("Link : " + this.commons);
+    }
+
+}
+
+
+Deserialization is the process of reconstructing the object from the serialized state. It is the reverse operation of serialization. Let's see an example where we are reading the data from a deserialized object.
+
+Deserialization is the process of reconstructing the object from the serialized state. It is the reverse operation of serialization.
+
+ex-
+	import java.io.*;  
+	class Depersist{  
+ 		public static void main(String args[]){  
+  		try{  
+  		ObjectInputStream in=new ObjectInputStream(new FileInputStream("f.txt"));  
+  		Student s=(Student)in.readObject();   
+  		System.out.println(s.id+" "+s.name);  
+  		in.close();  
+  		}catch(Exception e){System.out.println(e);}  
+ 	}  
+}  

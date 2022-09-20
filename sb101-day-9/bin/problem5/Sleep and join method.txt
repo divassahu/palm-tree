@@ -1,0 +1,110 @@
+Q5/- What is the Difference between the sleep and join method .
+---------------------------------------------------------------
+The sleep(long millis) method causes the currently executing thread to sleep for the specified number of milliseconds.
+
+Syntax-
+
+1. public static void sleep(long millis)throws InterruptedException
+2. public static void sleep(long millis)throws IllegalArguementException
+3. public static void sleep(long millis, int nanos)throws InterruptedException
+4. public static void sleep(long millis, int nanos)throws  IllegalArguementException
+
+example-
+
+public static void main(String[] args){
+        try {
+            for (int i = 0; i < 5; i++) {
+               
+                Thread.sleep(1000);
+               
+                System.out.println(i);
+            }
+        }
+        catch (Exception e) {
+   
+            System.out.println(e);
+        }
+    }
+
+
+The join() method waits for a thread to die. In other words, it causes the currently running threads to stop executing until the thread it joins with completes its task.
+
+Syntax-
+ public final synchronized void join(long millis);
+
+
+
+example-
+
+class ThreadJoining extends Thread
+{
+    @Override
+    public void run()
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            try
+            {
+                Thread.sleep(500);
+                System.out.println("Current Thread: "
+                        + Thread.currentThread().getName());
+            }
+  
+            catch(Exception ex)
+            {
+                System.out.println("Exception has" +
+                                " been caught" + ex);
+            }
+            System.out.println(i);
+        }
+    }
+}
+  
+class Main
+{
+    public static void main (String[] args)
+    {
+  
+        // creating two threads
+        ThreadJoining t1 = new ThreadJoining();
+        ThreadJoining t2 = new ThreadJoining();
+        ThreadJoining t3 = new ThreadJoining();
+  
+        // thread t1 starts
+        t1.start();
+  
+        // starts second thread after when
+        // first thread t1 has died.
+        try
+        {
+            System.out.println("Current Thread: "
+                  + Thread.currentThread().getName());
+            t1.join();
+        }
+  
+        catch(Exception ex)
+        {
+            System.out.println("Exception has " +
+                                "been caught" + ex);
+        }
+  
+        // t2 starts
+        t2.start();
+  
+        // starts t3 after when thread t2 has died.
+        try
+        {
+            System.out.println("Current Thread: "
+                 + Thread.currentThread().getName());
+            t2.join();
+        }
+  
+        catch(Exception ex)
+        {
+            System.out.println("Exception has been" +
+                                    " caught" + ex);
+        }
+  
+        t3.start();
+    }
+}

@@ -1,0 +1,16 @@
+Q4) Explain the difference between overloading and overriding methods with an example?
+-----------------------------------------------------------------------------------------
+
+Method Overloading-							Method Overriding
+------------------							--------------------
+1) It is compile time Polymorphism. 					1) it is run-time polymorphism.
+
+2) Increase Readability of application					2) it allows to use specific method present in the parent class.
+
+3) It occurs within class						3) it occurs in two diff classes.
+
+4) It may or may not required inheritance.				4) it is possible only through inheritance.
+
+5) Methods must have the same name and different signatures.		5) methods must have the same name and same signature.
+
+6) Private and final methods can be overloaded.				6) Private and final methods can’t be overridden.

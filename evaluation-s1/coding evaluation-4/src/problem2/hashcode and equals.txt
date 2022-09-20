@@ -1,0 +1,40 @@
+Q2) Explain about Hashcode and Equals Method.
+=============================================
+hashcode-
+---------
+1) hashcode returns the hashcode containing hexadecimal number.
+
+2) if two objects are equal then their hashCode will be the same.
+
+3) it is used in hashing to seprate element in the perticular group.
+
+4) it has belonging with java.lang package.
+
+
+equals()-
+---------
+1) equals method compare the text in the two object and returns a boolean value, either true or false.
+
+2) if two objects return true value by equals method may have different hashcodes.
+
+3) it is used mainly for comparison of two element.
+
+4) it is also belongs from same package java.lang.
+
+ex- 	String str1="abc"
+	String str2=new String("abc");
+	
+	if(str1.equals(str2)){
+		return true;
+		}
+		else{
+		return false;
+		}
+	
+	o/p-true
+	----
+
+	return(str1.hashCode()==str2.hashCode())//false;
+		
+
+

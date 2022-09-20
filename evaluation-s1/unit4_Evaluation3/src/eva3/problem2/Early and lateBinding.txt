@@ -1,0 +1,57 @@
+Briefly explain the difference between Early and Late Binding with examples.
+----------------------------------------------------------------------------
+
+Early binding-
+1)the binding which is dicided at compile time by the compiler that which method is to be called, is known as early binding.
+
+2)by early binding, static polymorphism can be achieved.
+
+3)example-method overloading.
+
+	class A{
+		void funA(int i){
+		syso("inside funA(int) of A");
+	}
+		void funA(String str){
+		Syso("inside funA(String) of A");
+	}
+}
+
+	Class Main{
+		public static void main(String[] args){
+		A a1=new A();
+		a1.funA("ABC");//inside funA(String) of A
+		a1.funA(10);//inside funA(int) of A
+	}
+}
+
+
+
+Late binding-
+-------------
+1)the binding in which the copmpiler doesen't decide the method which to be called, it is decided at run time.
+
+2)2)by early binding, dynamic polymorphism can be achieved.
+
+3)example- method override. 
+
+	class A{
+		void funA(int i){
+		syso("inside funA(int) of A");
+	}
+}
+
+	class B extends A{
+	@override
+	void funA(int i){
+	Syso("inside overriden of funA(int i) of A");
+	}
+}
+
+	class Main{
+		public static void main(String[] args){
+		A a1=new B();
+		a1.funA(20);// inside overriden of funA(int i) of A
+	}
+}
+	

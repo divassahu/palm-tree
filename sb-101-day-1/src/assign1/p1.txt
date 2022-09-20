@@ -1,0 +1,17 @@
+Question 1: Explain difference between PriorityQueue() and LinkedList().
+------------------------------------------------------------------------
+
+A priority queue- is a type of queue in which each element in a queue is associated with some priority, and they are served based on their priorities. If the elements have the same priority, they are served based on their order in a queue.
+
+Mainly, the value of the element can be considered for assigning the priority. For example, the highest value element can be used as the highest priority element. We can also assume the lowest value element to be the highest priority element. In other cases, we can also set the priority based on our needs.
+
+The following are the functions used to implement priority queue using linked list:
+
+push(): It is used to insert a new element into the Queue.
+pop(): It removes the highest priority element from the Queue.
+peep(): This function is used to retrieve the highest priority element from the queue without removing it from the queue.
+
+linked list-
+-----------
+of priority queue
+is created in such a way that the highest priority element is always added at the head of the queue. The elements are arranged in a descending order based on their priority so that it takes O(1) time in deletion. In case of insertion, we need to traverse the whole list in order to find out the suitable position based on their priority; so, this process takes O(N) time.

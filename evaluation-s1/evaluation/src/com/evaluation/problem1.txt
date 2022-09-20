@@ -1,0 +1,5 @@
+Q1) Explain why Java is platform independent ?
+====================================================================================
+Unlike any other programing language like c,c++ Java program can be executed on any plateform or in any operating system like windows,linux,mac,dos etc without changing a single line of code, hence it is called plateform independent.
+
+	It is possible due to JVM(java virtual machine) which works as interpreter to the java which converts java program into bytes code or exexutable code. But jvm is not plateform independent, we need to customise jvm according to our operating system.

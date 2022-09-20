@@ -1,0 +1,6 @@
+ Is there any difference between creating a string with and without a new operator?  
+        Explain with an example.
+============================================================================================
+
+Creating an string by new operator Create a new object with the string that will occupies our memory in heap area, where as without new operator string creation does not create any object and that would be resusble as well.
+if we create an string with new operator its execution time will be more than the string literals, as in object method memory allocation happens every time;

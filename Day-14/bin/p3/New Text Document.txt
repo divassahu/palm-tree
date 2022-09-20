@@ -1,0 +1,25 @@
+Q3) Explain AutoBoxing and Auto UnBoxing with Examples.
+-------------------------------------------------------
+
+autoboxing refers to the auto conversion of primitive type to its correspond object type. For example, conversion of int type to Integer object or char type to Character object. This conversion is done implicitly by the Java compiler during program execution.
+
+ex-
+--	
+class Demo
+{
+	public static void main(String[] args)
+	{
+		Integer i = 100; // Auto-boxing of int i.e converting primitive data type int to a Wrapper class Integer
+		System.out.println(i);
+
+		Character ch = 'a'; 
+		System.out.println(ch);
+		
+		Byte b = 12;
+		System.out.println(b);
+		
+	}
+}
+	
+
+when an object coverts to its correspond primitive type then it is called unboxing. For example, conversion of Integer type to int type or Byte to byte type etc. Java automatically performs this conversion during program execution.
