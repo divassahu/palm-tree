@@ -1,0 +1,14 @@
+Q1> What are the advantages of using Hibernate over JDBC?
+=========================================================
+
+JDBC is an API which connect Database with our java Application, whereas Hibernate is an framework which also provide support to connect with database to our java Apllication.
+
+Advantages of Hibernate over JDBC
+---------------------------------
+
+1) Hibernate is plateform independent, whereas JDBC is not plateform independent.
+
+2) Plateform Independecy of Hiberenate comes with xml file, since we have to only change xml file for different database so we can say that hibernate is plateform independent, where as in JDBC we have to write queries differently for different database.
+
+3) Due to plateform independency Hibernate is userfriendly and efficient, where as in JDBC we have to write queries for different database differently so it is not that much efficient and user friendly.
+

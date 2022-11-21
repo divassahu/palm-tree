@@ -1,0 +1,12 @@
+ Q-2(a)->Explain difference between JPA and Hibernate.
+======================================================
+
+1) JPA is a bridge between java objects and Database. Where as Hibernate is an framework which is also used to connect database to the java objects.Hibernate is an Implementation of JPA.
+
+2) JPA stands for java persistence API, it manage the relation between java Object and database, where as Hibernate is a ORM tool which is use to save the state of java Object.
+
+3) JPA comes in javax.persistence packege, whereas hibernate comes in org.hibernate package.
+
+4) inside JPA there can be many tools like Hibernate as hibernate is the implementaion of JPA.
+
+5) JPA uses Entity Manger for DML operarion, where as Hibernate uses Session Interface.

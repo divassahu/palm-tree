@@ -1,0 +1,56 @@
+● Explain the Life-cycle of Entity class with example.
+======================================================
+ 
+Entity class can be in three state-
+
+1) new State or transient state-
+--------------------------------
+if we create an object, untill we update that object into database that would be in the new State or transient State.
+
+ex- Student student=new Student("n1",10,"pune");
+
+so if we do not sink this object to the database it will be in the transient state. 
+
+
+2) persist state or Managed State-
+----------------------------------
+
+ if a persistence class object or entity is connected with Entity Manager then that object will be in persistence state or Managed state.
+
+EntityManagerFactory emf = Persistence.createEntityManagerFactory("accountUnit");
+		
+		EntityManager em= emf.createEntityManager();
+		
+		Account ac =em.find(Account.class, id);
+
+		Student student=new Student("n1",10,"pune");
+
+		em.getTransaction().begin();
+		
+		student.setName("n2"); >>>here this is in persistence state<<<
+
+		em.Transaction().commit();
+
+
+3) Detached State.
+------------------
+
+if we call em.close() or em.clear() on the Entity Manager Object then it will become in Detached State.
+
+		EntityManager em= emf.createEntityManager();
+		
+		Account ac =em.find(Account.class, id);
+
+		Student student=new Student("n1",10,"pune");
+
+		em.clear()>>>here this is in detached state<<<
+
+		em.getTransaction().begin();
+		
+		student.setName("n2"); 
+
+		em.Transaction().commit();
+
+		em.close();
+
+
