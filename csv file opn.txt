@@ -1,0 +1,150 @@
+import csv
+
+def evaluate_formula(formula, values):
+  # Split the formula into tokens
+  tokens = formula.split(' ')
+
+  # Stack to hold the values
+  stack = []
+
+  # Iterate through the tokens
+  for token in tokens:
+    # If the token is a number, convert it to an integer and push it to the stack
+    if token.isdigit():
+      stack.append(int(token))
+    # If the token is a variable, look up its value in the values dictionary and push it to the stack
+    elif token.isalpha():
+      stack.append(values[token])
+    # If the token is an operator, perform the operation on the two values at the top of the stack
+    elif token in ['+', '-', '*', '/']:
+      right = stack.pop()
+      left = stack.pop()
+      if token == '+':
+        stack.append(left + right)
+      elif token == '-':
+        stack.append(left - right)
+      elif token == '*':
+        stack.append(left * right)
+      elif token == '/':
+        stack.append(left / right)
+
+  # Return the result of the formula
+  return stack[0]
+
+# Read the CSV file
+with open('input.csv', 'r') as f:
+  reader = csv.reader(f)
+
+  # Create a dictionary to hold the values
+  values = {}
+
+  # Read the rows of the CSV file
+  for row in reader:
+    # Split the row into the key and value
+    key, value = row[0], row[1]
+
+    # If the value is a formula, evaluate it
+    if value.startswith('='):
+      value = evaluate_formula(value[1:], values)
+
+    # Add the key and value to the dictionary
+    values[key] = value
+
+# Write the results to a CSV file
+with open('output.csv', 'w') as f:
+  writer = csv.writer(f)
+
+  # Write the rows to the CSV file
+  for key, value in values.items():
+    writer.writerow([key, value])
+==============================================
+
+
+
+import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class Main {
+  public static void main(String[] args) throws IOException {
+    // Read the CSV file
+    Scanner scanner = new Scanner(new File("input.csv"));
+
+    // Create a map to hold the values
+    Map<String, Integer> values = new HashMap<>();
+
+    // Read the rows of the CSV file
+    while (scanner.hasNextLine()) {
+      String line = scanner.nextLine();
+      String[] parts = line.split(":");
+      String key = parts[0].trim();
+      String value = parts[1].trim();
+
+      // If the value is a formula, evaluate it
+      if (value.startsWith("=")) {
+        value = value.substring(1);
+        int result = evaluateFormula(value, values);
+        values.put(key, result);
+      } else {
+        values.put(key, Integer.parseInt(value));
+      }
+    }
+
+    // Close the scanner
+    scanner.close();
+
+    // Write the results to a CSV file
+    PrintWriter writer = new PrintWriter("output.csv", "UTF-8");
+
+    // Write the rows to the CSV file
+    for (Map.Entry<String, Integer> entry : values.entrySet()) {
+      writer.println(entry.getKey() + ": " + entry.getValue());
+    }
+
+    // Close the writer
+    writer.close();
+  }
+
+  public static int evaluateFormula(String formula, Map<String, Integer> values) {
+    // Split the formula into tokens
+    String[] tokens = formula.split(" ");
+
+    // Stack to hold the values
+    int[] stack = new int[tokens.length];
+    int stackPointer = 0;
+
+    // Iterate through the tokens
+    for (String token : tokens) {
+      // If the token is a number, convert it to an integer and push it to the stack
+      if (token.matches("-?\\d+")) {
+        stack[stackPointer++] = Integer.parseInt(token);
+      } else {
+        // If the token is a variable, look up its value in the values map and push it to the stack
+        int value = values.get(token);
+        stack[stackPointer++] = value;
+      }
+      if (stackPointer >= 2) {
+        // If the token is an operator, perform the operation on the two values at the top of the stack
+        int right = stack[--stackPointer];
+        int left = stack[--stackPointer];
+        switch (token) {
+          case "+":
+            stack[stackPointer++] = left + right;
+            break;
+          case "-":
+            stack[stackPointer++] = left - right;
+            break;
+          case "*":
+            stack[stackPointer++] = left * right;
+            break;
+          case "/":
+            stack[stackPointer++] = left / right;
+            break;
+        }
+      }
+    }
+
+    // Return the result of the formula
+   
+
