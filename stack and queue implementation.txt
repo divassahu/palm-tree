@@ -1,0 +1,70 @@
+import java.util.ArrayList;
+
+public class Stack {
+    ArrayList<Integer> stack;
+  
+    Stack() {
+        stack = new ArrayList<Integer>();
+    }
+  
+    void push(int x) {
+        stack.add(x);
+    }
+  
+    int pop() {
+        if (stack.isEmpty()) {
+            System.out.println("Stack is empty.");
+            return -1;
+        }
+        return stack.remove(stack.size() - 1);
+    }
+  
+    int peek() {
+        if (stack.isEmpty()) {
+            System.out.println("Stack is empty.");
+            return -1;
+        }
+        return stack.get(stack.size() - 1);
+    }
+  
+    boolean isEmpty() {
+        return stack.isEmpty();
+    }
+}
+===============================================================================================================
+
+import java.util.ArrayList;
+
+public class Queue {
+    ArrayList<Integer> queue;
+  
+    Queue() {
+        queue = new ArrayList<Integer>();
+    }
+  
+    void enqueue(int x) {
+        queue.add(x);
+    }
+  
+    int dequeue() {
+        if (queue.isEmpty()) {
+            System.out.println("Queue is empty.");
+            return -1;
+        }
+        return queue.remove(0);
+    }
+  
+    int front() {
+        if (queue.isEmpty()) {
+            System.out.println("Queue is empty.");
+            return -1;
+        }
+        return queue.get(0);
+    }
+  
+    boolean isEmpty() {
+        return queue.isEmpty();
+    }
+}
+The above code defines the Stack class which has the basic methods like push, pop, peek and check for empty stack, it uses ArrayList as an underlying data structure. Similarly, the above code defines the Queue class which has the basic methods like enqueue, dequeue, front and check for empty queue, it uses ArrayList as an underlying data structure.
+Please keep in mind that the above code is just an example and it may not be the best solution for all the cases and it uses ArrayList so it's not thread safe and would not provide constant time performance in all cases.
