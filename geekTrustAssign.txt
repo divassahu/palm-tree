@@ -1,0 +1,105 @@
+package tollCalculator;
+
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+
+public class TollCalculator {
+	
+	 public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+	        double totalToll = 0;
+	        double totalDiscount = 0;
+	        double totalCash = 0;
+	        double totalFlatFee = 0;
+	        int totalVehicles = 0;
+	        Map<String, Integer> vehicleTypeCount = new HashMap<>();
+	        Map<String, Double> vehicleTypeToll = new HashMap<>();
+	        
+	        while (true) {
+	            // Get the vehicle number
+	            System.out.print("Enter the vehicle number or type 'exit' to quit: ");
+	            String vehicleNumber = scanner.nextLine();
+	            if (vehicleNumber.equalsIgnoreCase("exit")) {
+	                break;
+	            }
+	            
+	            // Get the vehicle type
+	            System.out.print("Enter the vehicle type (car, bike, van, truck): ");
+	            String vehicleType = scanner.nextLine();
+	            
+	            // Get the FASTAG balance
+	            System.out.print("Enter the FASTAG balance: ");
+	            double fastagBalance = scanner.nextDouble();
+	            
+	            // Get the toll cost
+	            System.out.print("Enter the toll cost: ");
+	            double tollCost = scanner.nextDouble();
+	            
+	            // Check if there is sufficient balance in the FASTAG
+	            if (fastagBalance >= tollCost) {
+	                // Deduct the toll cost from the FASTAG balance
+	                fastagBalance -= tollCost;
+	                totalToll += tollCost;
+	            } else {
+	                // If there is no sufficient balance in the FASTAG, calculate the remaining cost to be paid by cash
+	                double remainingCost = tollCost - fastagBalance;
+	                double cashPaid = remainingCost + 40; // flat fee of 40
+	                totalCash += cashPaid;
+	                totalFlatFee += 40;
+	                totalToll += tollCost;
+	            }
+	            
+	            // Check if the vehicle has done a return journey
+	            if (vehicleTypeCount.containsKey(vehicleNumber)) {
+	                int count = vehicleTypeCount.get(vehicleNumber);
+	                double toll = vehicleTypeToll.get(vehicleNumber);
+	                if (count % 2 == 1) {
+	                    // Return journey, apply 50% discount
+	                    totalDiscount += (tollCost / 2);
+	                }
+	                vehicleTypeCount.put(vehicleNumber, count + 1);
+	                vehicleTypeToll.put(vehicleNumber, toll + tollCost);
+	            } else {
+	                // First journey
+	                vehicleTypeCount.put(vehicleNumber, 1);
+	                vehicleTypeToll.put(vehicleNumber, tollCost);
+	            }
+	            
+	            // Increase the total vehicle count
+	            totalVehicles++;
+	            
+	            // Increase the vehicle type count
+	            if (vehicleTypeCount.containsKey(vehicleType)) {
+	                int count = vehicleTypeCount.get(vehicleNumber);
+	            } else {
+	                vehicleTypeCount.put(vehicleType, 1);
+	            }
+	        }
+	        
+	        // Print payment summary
+	        System.out.println("Payment Summary:");
+	        System.out.println("Total toll collected: " + totalToll);
+	        System.out.println("Total discount given: " + totalDiscount);
+	        System.out.println("Total cash collected: " + totalCash);
+	        System.out.println("Total flat fee collected: " + totalFlatFee);
+	        
+	        // Print vehicle type summary
+	        System.out.println("Vehicle Type Summary:");
+	        System.out.println("Total number of vehicles: " + totalVehicles);
+	        // sort vehicleTypeCount by value in descending order
+	        vehicleTypeCount = vehicleTypeCount.entrySet().stream()
+	                .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+	                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+	                        (oldValue, newValue) -> oldValue, LinkedHashMap::new));
+	        
+	        for (Entry<String, Integer> entry : vehicleTypeCount.entrySet()) {
+	            System.out.println(entry.getKey() + ": " + entry.getValue());
+	        }
+	    }
+	
+}
