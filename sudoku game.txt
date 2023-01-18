@@ -1,0 +1,72 @@
+import java.util.Arrays;
+
+public class Sudoku {
+    public static final int BOARD_SIZE = 9;
+    public static final int MIN_NUMBER = 1;
+    public static final int MAX_NUMBER = 9;
+    public static final int BOX_SIZE = 3;
+
+    private int[][] board;
+
+    public Sudoku() {
+        board = new int[BOARD_SIZE][BOARD_SIZE];
+    }
+
+    public void set(int x, int y, int value) {
+        if (x >= 0 && x < BOARD_SIZE && y >= 0 && y < BOARD_SIZE && value >= MIN_NUMBER && value <= MAX_NUMBER) {
+            board[x][y] = value;
+        }
+    }
+
+    public int get(int x, int y) {
+        if (x >= 0 && x < BOARD_SIZE && y >= 0 && y < BOARD_SIZE) {
+            return board[x][y];
+        } else {
+            return 0;
+        }
+    }
+
+    public boolean isValid() {
+        for (int x = 0; x < BOARD_SIZE; x++) {
+            for (int y = 0; y < BOARD_SIZE; y++) {
+                if (!isValid(x, y)) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public boolean isValid(int x, int y) {
+        int value = board[x][y];
+
+        // Check row
+        for (int i = 0; i < BOARD_SIZE; i++) {
+            if (i != y && board[x][i] == value) {
+                return false;
+            }
+        }
+
+        // Check column
+        for (int i = 0; i < BOARD_SIZE; i++) {
+            if (i != x && board[i][y] == value) {
+                return false;
+            }
+        }
+
+        // Check box
+        int boxX = x / BOX_SIZE;
+        int boxY = y / BOX_SIZE;
+        for (int i = 0; i < BOX_SIZE; i++) {
+            for (int j = 0; j < BOX_SIZE; j++) {
+                int x2 = boxX * BOX_SIZE + i;
+                int y2 = boxY * BOX_SIZE + j;
+                if (x2 != x && y2 != y && board[x2][y2] == value) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+}
