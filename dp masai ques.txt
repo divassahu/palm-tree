@@ -1,0 +1,118 @@
+Given stairs from 0 to n-1, you have to climb the nth stair, on each stair, you can pay the cost on that stair and climb 1 or 2 steps, find the cost to climb the nth stair.
+
+
+Input
+:
+
+An array costs of length n where costs[i] is the cost of climbing the ith stair.
+Output:
+
+An integer representing the minimum cost to climb the nth stair.
+Example:
+
+Input: [10, 15, 20]
+Output: 15
+Explanation: The optimal path is to pay the cost of the 2nd stair (15) and climb 2 steps to reach the 3rd stair.
+
+This problem can be solved using dynamic programming. We can create an array dp of length n where dp[i] represents the minimum cost to climb the ith stair. We can initialize dp[0] and dp[1] to the cost of climbing the first two stairs and then use a for loop to iterate through the rest of the stairs, updating the minimum cost to reach each stair by taking the minimum of the cost to reach the previous stair plus the cost of climbing the current stair and the cost to reach the stair before the previous stair plus the cost of climbing the current stair. Finally, the minimum cost to reach the last stair (nth stair) will be in dp[n-1].
+
+
+
+
+divassahu@gmail.com
+Given stairs from 0 to n-1, you have to climb the nth stair, on each stair, you can pay the cost on that stair and climb 1 or 2 steps, find the cost to climb the nth stair.
+Input
+2
+4
+0 0 0 0
+10
+1 100 1 1 1 100 1 1 100 1
+Input:
+
+An integer n representing the number of stairs
+An array costs of length n where costs[i] is the cost of climbing the ith stair.
+Output:
+
+An integer representing the minimum cost to climb the nth stair.
+Example:
+
+Input:
+2
+4
+0 0 0 0
+10
+1 100 1 1 1 100 1 1 100 1
+
+Output:
+0
+5
+
+Explanation:
+In the first example, all the stairs have no cost to climb, so the minimum cost to reach the last stair (nth stair) is 0.
+In the second example, the optimal path is to pay the cost of the 2nd, 4th, 6th, 8th and 10th stairs (1+1+1+1+1 = 5) and climb 2 steps each time to reach the nth stair.
+
+This problem can be solved using dynamic programming. We can create an array dp of length n where dp[i] represents the minimum cost to climb the ith stair. We can initialize dp[0] and dp[1] to the cost of climbing the first two stairs and then use a for loop to iterate through the rest of the stairs, updating the minimum cost to reach each stair by taking the minimum of the cost to reach the previous stair plus the cost of climbing the current stair and the cost to reach the stair before the previous stair plus the cost of climbing the current stair. Finally, the minimum cost to reach the last stair (nth stair) will be in dp[n-1].
+
+
+
+
+divassahu@gmail.com
+generate java code for above problem
+Here is an example of Java code to solve the problem:
+
+Copy code
+public class StairClimbing {
+    public static int minCost(int n, int[] costs) {
+        int[] dp = new int[n];
+        dp[0] = costs[0];
+        dp[1] = Math.min(costs[0], costs[1]);
+        for (int i = 2; i < n; i++) {
+            dp[i] = Math.min(dp[i-1] + costs[i], dp[i-2] + costs[i]);
+        }
+        return dp[n-1];
+    }
+    public static void main(String[] args) {
+        int[] costs1 = {0, 0, 0, 0};
+        int[] costs2 = {1, 100, 1, 1, 1, 100, 1, 1, 100, 1};
+        System.out.println(minCost(4, costs1)); // Output: 0
+        System.out.println(minCost(10, costs2)); // Output: 5
+    }
+}
+This code defines a minCost function that takes in the number of stairs and an array of costs for each stair. It creates an array dp to keep track of the minimum cost to reach each stair. It initializes the first two elements of dp to the cost of climbing the first two stairs. Then, it uses a for loop to iterate through the rest of the stairs, updating the minimum cost to reach each stair by taking the minimum of the cost to reach the previous stair plus the cost of climbing the current stair and the cost to reach the stair before the previous stair plus the cost of climbing the current stair. Finally, it returns the minimum cost to reach the last stair, which is stored in dp[n-1]. The main function demonstrates how the minCost function can be used with different examples.
+
+
+
+
+divassahu@gmail.com
+complete the above code by taking input from scanner class
+Here is an example of Java code that takes input from the scanner class and solves the problem:
+
+Copy code
+import java.util.Scanner;
+
+public class StairClimbing {
+    public static int minCost(int n, int[] costs) {
+        int[] dp = new int[n];
+        dp[0] = costs[0];
+        dp[1] = Math.min(costs[0], costs[1]);
+        for (int i = 2; i < n; i++) {
+            dp[i] = Math.min(dp[i-1] + costs[i], dp[i-2] + costs[i]);
+        }
+        return dp[n-1];
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of stairs: ");
+        int n = scanner.nextInt();
+        int[] costs = new int[n];
+        System.out.println("Enter the cost of climbing each stair: ");
+        for (int i = 0; i < n; i++) {
+            costs[i] = scanner.nextInt();
+        }
+        int minCost = minCost(n, costs);
+        System.out.println("The minimum cost to climb the last stair is: " + minCost);
+    }
+}
+This code defines a minCost function that takes in the number of stairs and an array of costs for each stair. It creates an array dp to keep track of the minimum cost to reach each stair. It initializes the first two elements of dp to the cost of climbing the first two stairs. Then, it uses a for loop to iterate through the rest of the stairs, updating the minimum cost to reach each stair by taking the minimum of the cost to reach the previous stair plus the cost of climbing the current stair and the cost to reach the stair before the previous stair plus the cost of climbing the current stair. Finally, it returns the minimum cost to reach the last stair, which is stored in dp[n-1].
+The main function uses the scanner class to take input from the user for the number of stairs and the cost of climbing each stair, then calls the minCost function and prints out the minimum cost to climb the last stair.
