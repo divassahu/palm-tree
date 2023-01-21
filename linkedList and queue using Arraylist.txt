@@ -1,0 +1,98 @@
+ ArrayList to implement a linked list:
+
+
+import java.util.ArrayList;
+
+public class LinkedList {
+    ArrayList<Integer> list;
+    public LinkedList() {
+        list = new ArrayList<>();
+    }
+    public void addToTail(int val) {
+        list.add(val);
+    }
+    public void addToHead(int val) {
+        list.add(0, val);
+    }
+    public int deleteFromTail() {
+        if (list.isEmpty()) {
+            return -1;
+        }
+        return list.remove(list.size() - 1);
+    }
+    public int deleteFromHead() {
+        if (list.isEmpty()) {
+            return -1;
+        }
+        return list.remove(0);
+    }
+    public int size() {
+        return list.size();
+    }
+    public boolean isEmpty() {
+        return list.isEmpty();
+    }
+    public static void main(String[] args) {
+        LinkedList ll = new LinkedList();
+        ll.addToTail(1);
+        ll.addToTail(2);
+        ll.addToTail(3);
+        ll.addToHead(0);
+        System.out.println(ll.deleteFromTail()); // Output: 3
+        System.out.println(ll.deleteFromHead()); // Output: 0
+        System.out.println(ll.size()); // Output: 2
+        System.out.println(ll.isEmpty()); // Output: false
+    }
+}
+This code defines a LinkedList class that uses an ArrayList to store the values of the linked list. The class has methods to add a value to the head or tail of the list, delete a value from the head or tail of the list, get the size of the list, and check if the list is empty. The main function demonstrates how the methods of the class can be used.
+It's important to note that an ArrayList is not a true linked list, it's an Array-based implementation of a list, it does not have pointers to the next and previous nodes, so it doesn't have the same performance characteristics of a true linked list.
+
+
+
+
+ ArrayList to implement a queue:
+
+
+import java.util.ArrayList;
+
+public class Queue {
+    ArrayList<Integer> list;
+
+    public Queue() {
+        list = new ArrayList<>();
+    }
+
+    public void enqueue(int val) {
+        list.add(val);
+    }
+
+    public int dequeue() {
+        if (list.isEmpty()) {
+            return -1;
+        }
+        return list.remove(0);
+    }
+
+    public int size() {
+        return list.size();
+    }
+
+    public boolean isEmpty() {
+        return list.isEmpty();
+    }
+
+    public static void main(String[] args) {
+        Queue q = new Queue();
+        q.enqueue(1);
+        q.enqueue(2);
+        q.enqueue(3);
+        System.out.println(q.dequeue()); // Output: 1
+        System.out.println(q.dequeue()); // Output: 2
+        System.out.println(q.size()); // Output: 1
+        System.out.println(q.isEmpty()); // Output: false
+    }
+}
+
+
+This code defines a Queue class that uses an ArrayList to store the values of the queue. The class has methods to enqueue a value (add to the end of the queue), dequeue a value (remove from the front of the queue), get the size of the queue, and check if the queue is empty. The main function demonstrates how the methods of the class can be used.
+It's important to note that using ArrayList as a Queue has a O(n) time complexity for dequeue operation, as it requires shifting all the elements on dequeue. A more efficient implementation would be using a LinkedList or a circular array.
