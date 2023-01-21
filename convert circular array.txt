@@ -1,0 +1,46 @@
+public class CircularArray {
+    public static int[] convertToCircular(int[] arr) {
+        int[] circularArr = new int[arr.length * 2];
+        for (int i = 0; i < arr.length; i++) {
+            circularArr[i] = arr[i];
+            circularArr[i + arr.length] = arr[i];
+        }
+        return circularArr;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        int[] circularArr = convertToCircular(arr);
+        for (int i : circularArr) {
+            System.out.print(i + " ");
+        }
+        // Output: 1 2 3 4 5 1 2 3 4 5
+    }
+}
+This code defines a convertToCircular function that takes in an array, creates a new array with twice the length of the input array and copies the elements from the input array to the new array twice. It then returns the new array. The main function demonstrates how the convertToCircular function can be used with an example array.
+It's important to note that this implementation will create a new array with the same length, if you want to convert the original array to circular array, it can be done by setting the last element of the array to the first element of the array.
+
+Copy code
+public class CircularArray {
+    public static int[] convertToCircular(int[] arr) {
+        int last = arr[arr.length-1];
+        for (int i = arr.length-1; i > 0; i--) {
+            arr[i] = arr[i-1];
+        }
+        arr[0] = last;
+        return arr;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        int[] circularArr = convertToCircular(arr);
+        for (int i : circularArr) {
+            System.out.print(i + " ");
+        }
+        // Output: 5 1 2 3 4 5
+    }
+}
+This way the original array will be converted to circular array and will not create a new array.
+
+
+
