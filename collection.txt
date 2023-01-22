@@ -1,0 +1,72 @@
+Java Collections Framework is a group of classes and interfaces that implement commonly reusable collection data structures. The framework defines several collection interfaces (such as Set, List, Queue, etc.) and their implementations (e.g. ArrayList, HashSet, LinkedList, etc.).
+
+Set: A collection that cannot contain duplicate elements. Example: HashSet<String> set = new HashSet<String>();
+List: An ordered collection that allows duplicate elements. Example: ArrayList<Integer> list = new ArrayList<Integer>();
+Queue: A collection used to hold multiple elements prior to processing. Example: LinkedList<Integer> queue = new LinkedList<Integer>();
+Map: A collection that stores key-value pairs. Example: HashMap<Integer, String> map = new HashMap<Integer, String>();
+Deque: A double-ended queue that allows insertion and removal of elements from both ends. Example: ArrayDeque<Integer> deque = new ArrayDeque<Integer>();
+All the collections mentioned above are interfaces which have multiple classes that implement them. The above examples demonstrate how we can create objects of classes that implement these interfaces.
+
+It's important to note that Java also provides thread-safe collection classes that are used when multiple threads access a collection. These classes are:
+
+Vector
+Stack
+Hashtable
+Properties
+It's recommended to use collections from the java.util.concurrent package for multi-threading scenarios as they are more efficient than the above mentioned thread-safe collections.
+
+
+
+
+ 
+Java Collections Framework is a group of classes and interfaces that implement commonly reusable collection data structures. The framework defines several collection interfaces (such as Set, List, Queue, etc.) and their implementations (e.g. ArrayList, HashSet, LinkedList, etc.).
+
+Set: A collection that cannot contain duplicate elements. The Set interface defines methods such as add(element), remove(element), contains(element), size(), etc. One of the most commonly used implementation of Set is HashSet. It provides constant-time performance for the basic operations (add, remove, contains, and size). Example:
+
+    Set<String> set = new HashSet<>();
+    set.add("apple");
+    set.add("banana");
+    set.add("orange");
+    set.add("apple"); // will not be added as it's already in the set
+    System.out.println(set); // Output: [banana, orange, apple]
+List: An ordered collection that allows duplicate elements. The List interface defines methods such as add(element), remove(element), get(index), set(index, element), contains(element), size(), etc. One of the most commonly used implementation of List is ArrayList. It provides constant-time performance for the basic operations (add, remove, get, set, and size). Example:
+
+    List<Integer> list = new ArrayList<>();
+    list.add(1);
+    list.add(2);
+    list.add(3);
+    list.add(2); // duplicate element
+    System.out.println(list); // Output: [1, 2, 3, 2]
+Queue: A collection used to hold multiple elements prior to processing. The Queue interface defines methods such as offer(element), poll(), peek(), size(), etc. One of the most commonly used implementation of Queue is LinkedList. It provides constant-time performance for the basic operations (offer, poll, peek, and size). Example:
+Copy code
+    Queue<Integer> queue = new LinkedList<>();
+    queue.offer(1);
+    queue.offer(2);
+    queue.offer(3);
+    System.out.println(queue.poll()); // Output: 2
+    System.out.println(queue.peek()); // Output: 3
+    System.out.println(queue.size()); // Output: 1
+Map: A collection that stores key-value pairs. The Map interface defines methods such as put(key, value), get(key), remove(key), containsKey(key), size(), etc. One of the most commonly used implementation of Map is HashMap. It provides constant-time performance for the basic operations (get, put, and remove). Example:
+
+    Map<String, Integer> map = new HashMap<>();
+    map.put("apple", 1);
+    map.put("banana", 2);
+    map.put("orange", 3);
+    System.out.println(map.get("banana")); // Output: 2
+    System.out.println(map.size()); // Output: 3
+Deque: A double-ended queue that allows insertion and removal of elements from both ends. The Deque interface defines methods such as addFirst(element), addLast(element), removeFirst(), removeLast(), peekFirst(), peekLast(), size(), etc. One of the most commonly used implementation of Deque is ArrayDeque. It provides constant-time performance for the basic operations (add, remove, get, and size). Example:
+
+    Deque<Integer> deque = new ArrayDeque<>();
+    deque.addFirst(1);
+    deque.addLast(2);
+    deque.addLast(3);
+    System.out.println(deque.removeFirst()); // Output: 1
+    System.out.println(deque.removeLast()); // Output: 3
+    System.out.println(deque.peekFirst()); // Output: 2
+It's important to note that Java also provides thread-safe collection classes that are used when multiple threads access a collection. These classes are:
+
+Vector: A thread-safe implementation of List interface.
+Stack: A thread-safe implementation of Deque interface with LIFO (Last In First Out) ordering.
+Hashtable: A thread-safe implementation of Map interface.
+Properties: A thread-safe implementation of Map interface that is used to maintain lists of values in which the key is a String and the value is also a String.
+It's recommended to use collections from the java.util.concurrent package for multi-threading scenarios as they are more efficient than the above mentioned thread-safe collections.
