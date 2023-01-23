@@ -1,0 +1,75 @@
+Java is a versatile programming language and can be used for a wide range of tasks. However, there are certain things that Java is not well-suited for, such as:
+
+Low-level system programming: Java is a high-level language and does not provide direct access to system resources, making it less suitable for tasks that require direct manipulation of memory or hardware.
+
+Real-time applications: Java's garbage collector and the JVM can cause delays that make it less suitable for real-time systems where timing is critical.
+
+High-performance computing: Java is not as fast as other languages like C or C++, so it may not be the best choice for computationally intensive tasks.
+
+Native mobile app development: Java is mainly used for developing android apps, However, it's not the best choice for developing native apps for iOS and other mobile platforms.
+
+In general, while Java can be used for a wide range of tasks, it may not be the best choice for certain types of low-level, performance-critical, or platform-specific tasks.
+
+
+
+
+---------------------------------------------
+Java is a powerful programming language, but it does have some limitations. Here are ten things that are not possible to do with Java:
+
+Creating a standalone executable: Java code is compiled into bytecode that runs on the Java Virtual Machine (JVM), so it is not possible to create a standalone executable file that can run on a computer without the JVM installed.
+
+Direct memory manipulation: Java does not provide direct access to memory, making it difficult to perform tasks that require manual memory management, such as memory-mapped files or custom memory allocators.
+
+Unsafe operations: Java is designed to be safe and secure, so it does not provide a way to perform operations that can compromise the stability or security of the system, such as direct pointer manipulation or inline assembly.
+
+Interacting with the operating system kernel: Java is designed to be platform-independent, so it does not provide a way to interact with the operating system kernel or perform low-level system tasks such as creating system calls or device drivers.
+
+Accessing low-level system resources: Java does not provide direct access to low-level system resources such as the file system, network, or hardware devices, making it difficult to perform tasks such as reading/writing to a specific memory address or controlling hardware directly.
+
+Real-time programming: Java's garbage collector and the JVM can cause delays that make it less suitable for real-time systems where timing is critical.
+
+High-performance computing: Java is not as fast as other languages like C or C++, so it may not be the best choice for computationally intensive tasks.
+
+Developing a native mobile app: Java is mainly used for developing android apps, However, it's not the best choice for developing native apps for iOS and other mobile platforms.
+
+Creating a kernel or operating system: Java is not well suited for developing an operating system or kernel because it does not provide low-level access to system resources and is not designed for real-time performance.
+
+Creating a hardware device driver: Java does not provide direct access to hardware and does not have real-time constraints, so it would not be a good choice for developing a device driver for a specific hardware device.
+
+These are just a few examples of things that Java is not well-suited for, but it's still a powerful and versatile language that can be used for a wide range of tasks.
+
+
+
+
+--------------------------------------------
+Creating standalone executables
+Direct memory manipulation
+Unsafe operations
+Interacting with OS kernel
+Accessing low-level system resources
+Real-time programming
+High-performance computing
+Native mobile app development
+Creating a kernel or operating system
+Creating a hardware device driver
+Platform-specific optimization
+Inline assembly
+Creating custom memory allocators
+Memory-mapped files
+Accessing hardware directly
+Creating system calls
+Pointer manipulation
+Developing low-level libraries
+C++ interopability
+Creating a shell script
+Creating a GUI desktop app
+Operating with DirectX or OpenGL
+Developing games
+Using specific hardware features
+Creating a system service
+Native threading
+Interacting with hardware interrupts
+Generating machine code
+Creating shared libraries
+Operating with specific file formats
+Note that, these points are not absolute limitations of the Java programming language, rather it is not as efficient or convenient as some other languages for certain type of specific tasks and use cases.
