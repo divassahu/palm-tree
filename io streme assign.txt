@@ -1,0 +1,101 @@
+- Consider the following class:
+class Address{
+state:
+city:
+pincode:
+}
+class Student{
+roll: int
+name: String
+marks: int
+address: Address
+}
+● Write a class Demo1 to Serialize the List of 5 Student objects with
+proper data into a file studentdata.txt file.
+● Write a class Demo2 in which deserialize the above Student's details
+from the “studentdata.txt” file and print all student's details using the
+Lamda expression.
+● Write a program to read a text file and if in this file any mobile number is
+there (Indian mobile number started with 6,7,8,9) then write those
+mobile numbers into another text file.
+For example, if a mobile number is in the format of “mob:9023232323”
+Hint: to find the Indian mobile number make use of Regular
+expressions.
+Class Demo1:
+
+
+import java.io.*;
+import java.util.List;
+
+public class Demo1 {
+    public static void main(String[] args) {
+        List<Student> students = // Initialize a list of 5 Student objects with proper data
+        try {
+            FileOutputStream fos = new FileOutputStream("studentdata.txt");
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(students);
+            oos.close();
+            fos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+Class Demo2:
+
+
+import java.io.*;
+import java.util.List;
+
+public class Demo2 {
+    public static void main(String[] args) {
+        try {
+            FileInputStream fis = new FileInputStream("studentdata.txt");
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            List<Student> students = (List<Student>) ois.readObject();
+            ois.close();
+            fis.close();
+
+            students.forEach(student -> {
+                System.out.println("Roll: " + student.roll);
+                System.out.println("Name: " + student.name);
+                System.out.println("Marks: " + student.marks);
+                System.out.println("Address: " + student.address.state + ", " + student.address.city + ", " + student.address.pincode);
+                System.out.println("-----------------------------");
+            });
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+}
+Program to read a text file and write mobile numbers to another file:
+
+import java.io.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class MobileNumberExtractor {
+    public static void main(String[] args) {
+        try {
+            FileInputStream fis = new FileInputStream("input.txt");
+            BufferedReader br = new BufferedReader(new InputStreamReader(fis));
+            FileOutputStream fos = new FileOutputStream("output.txt");
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
+            String line;
+            Pattern pattern = Pattern.compile("(?:(?:\\+|0{0,2})91(\\s*[\\-]\\s*)?|[0]?)?[789]\\d{9}");
+            while ((line = br.readLine()) != null) {
+                Matcher matcher = pattern.matcher(line);
+                while (matcher.find()) {
+                    bw.write(matcher.group());
+                    bw.newLine();
+                }
+            }
+            bw.close();
+            fos.close();
+            br.close();
+            fis.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
