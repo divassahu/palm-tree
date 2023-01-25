@@ -1,0 +1,70 @@
+Which of the following is a type of malware that disguises itself as legitimate software?
+a) Trojan
+b) Worm
+c) Virus
+d) Ransomware
+Answer : a) Trojan
+
+What is the primary purpose of a firewall?
+a) To encrypt data
+b) To prevent unauthorized access to a network
+c) To remove malware
+d) To create backups
+Answer : b) To prevent unauthorized access to a network
+
+Which of the following is a common type of cyber attack?
+a) Man-in-the-middle attack
+b) Denial-of-service attack
+c) Buffer overflow attack
+d) All of the above
+Answer : d) All of the above
+
+What is the purpose of a intrusion detection system (IDS)?
+a) To prevent unauthorized access
+b) To detect and alert on malicious activity
+c) To remove malware
+d) To create backups
+Answer : b) To detect and alert on malicious activity
+
+What is the first step in creating a security incident response plan?
+a) Identifying the incident
+b) Containing the incident
+c) Analyzing the incident
+d) Planning for incident response
+Answer : d) Planning for incident response
+
+Which of the following is a way to prevent phishing attacks?
+a) Use anti-phishing software
+b) Be cautious of unsolicited emails
+c) Keep software and operating systems up to date
+d) All of the above
+Answer : d) All of the above
+
+What is Two-Factor Authentication (2FA)?
+a) A way to authenticate users by using multiple types of identification
+b) A way to encrypt data
+c) A way to remove malware
+d) A way to create backups
+Answer : a) A way to authenticate users by using multiple types of identification
+
+What is the main purpose of a virtual private network (VPN)?
+a) To encrypt data
+b) To create a secure connection over a public network
+c) To remove malware
+d) To create backups
+Answer : b) To create a secure connection over a public network
+
+Which of the following is the most effective way to protect against social engineering attacks?
+a) Use anti-virus software
+b) Keep software and operating systems up to date
+c) Educate employees about social engineering tactics
+d) All of the above
+Answer : c) Educate employees about social engineering tactics
+
+What is the purpose of a security information and event management (SIEM) system?
+a) To prevent unauthorized access
+b) To collect and analyze security-related data from multiple sources
+c) To remove malware
+d) To create backups
+Answer : b) To collect and analyze security-related data from multiple sources
+
