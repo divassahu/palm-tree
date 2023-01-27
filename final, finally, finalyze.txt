@@ -1,0 +1,105 @@
+In Java, "final" is a keyword that can be used in several contexts.
+
+"final" variables: These are variables that are declared as "final", and their value cannot be changed once assigned. For example:
+Copy code
+final int x = 5;
+x = 10; // this will give an error
+"final" methods: These are methods that are declared as "final", and they cannot be overridden by subclasses. For example:
+
+class A {
+    final void myMethod() {
+        // some code here
+    }
+}
+class B extends A {
+    void myMethod() { // this will give an error
+        // some code here
+    }
+}
+
+
+"final" classes: These are classes that are declared as "final", and they cannot be extended by other classes. For example:
+Copy code
+final class A {
+    // class code here
+}
+class B extends A { // this will give an error
+    // class code here
+}
+"finally" block: It is used in exception handling and is executed after the try and catch blocks regardless of whether an exception was thrown or caught.
+
+
+try {
+  // some code here
+} catch (Exception e) {
+  // some code here
+} finally {
+  // some code here
+}
+"finalize()" method: It is a method provided by the Object class that can be overridden by any class. It is called by the garbage collector before an object is destroyed. It is used to perform cleanup operations such as closing open files or releasing resources before the object is destroyed.
+
+
+class MyClass {
+    protected void finalize() throws Throwable {
+        // some code here
+    }
+}
+Advantages of final keyword:
+
+It can help to make code more efficient by allowing the JVM to make certain optimizations.
+It can help to make code more robust by preventing unintended modification of class and variable state.
+Disadvantages of final keyword:
+
+It can make code more difficult to understand and maintain by preventing certain types of polymorphism.
+It can make code less flexible by preventing certain types of class extension.
+It's good to use final keyword when the value or the behavior of a variable or a class is intended to be constant and should not be changed.
+
+
+
+
+
+advantages of finalyze
+The "finalize()" method is provided by the Object class and can be overridden by any class. It is called by the garbage collector before an object is destroyed and is used to perform cleanup operations such as closing open files or releasing resources before the object is destroyed.
+
+Advantages of the "finalize()" method:
+
+It allows for a clean and efficient way to release resources before an object is destroyed by the garbage collector.
+It can help prevent resource leaks by ensuring that all resources are properly released before an object is no longer needed.
+It can be used to perform additional cleanup or logging operations before an object is destroyed.
+It's worth noting that the "finalize()" method is not guaranteed to be called and the garbage collection process is not guaranteed to happen on a specific time so the use of finalize() should be avoided as much as possible and use other cleaner solutions, like try-with-resources in java, to handle resources.
+
+
+
+
+"finally" is a block of code in Java that is used in exception handling. It is executed after the try and catch blocks, regardless of whether an exception was thrown or caught. The code in the "finally" block is guaranteed to be executed, even if an exception is thrown in the try block or if the program exits the try block early.
+
+Here is an example of how the "finally" block is used:
+
+
+try {
+    // some code here that may throw an exception
+} catch (Exception e) {
+    // code to handle the exception
+} finally {
+    // code that is guaranteed to be executed
+}
+The main use of the "finally" block is to perform cleanup operations, such as closing open files or releasing resources, regardless of whether an exception occurs or not. This helps to prevent resource leaks and ensure that the application is in a consistent state.
+
+Advantages of "finally" block:
+
+It allows for a clean and efficient way to release resources and perform cleanup operations, regardless of whether an exception occurs or not.
+It can help prevent resource leaks by ensuring that all resources are properly released.
+It can be used to perform additional cleanup or logging operations.
+It's also worth noting that finally block can be used in conjunction with try-with-resources statement.
+
+
+try(FileInputStream fis = new FileInputStream("file.txt")) {
+    // some code here
+} catch (IOException e) {
+    // some code here
+} finally {
+    // some code here
+}
+In this case, the FileInputStream resource is automatically closed by the try-with-resources statement when the try block is finished, whether an exception is thrown or not.
+
+It's important to keep in mind that the finally block can also be used to suppress exceptions. In case an exception was thrown in the try or catch block, the code in the finally block can choose to either throw it again or to suppress it and thus, mask the original exception, causing confusion and making the debugging process harder.
