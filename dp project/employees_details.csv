@@ -1,0 +1,365 @@
+id,name,company,department,salary
+1,Olivia,Vivo,IT,99041
+2,Liam,Asus,Data Analytics,20561
+3,Noah,Sony,Management,67995
+4,Oliver,Apple,Marketing,71022
+5,Emma,Vivo,General Marketing,66764
+6,Charlotte,Nokia,General Marketing,90836
+7,Elijah,One Plus,Marketing,10597
+8,James,Vivo,Sales,61165
+9,Elizabeth,Oppo,Management,81139
+10,Eleanor,Acer,General Marketing,48063
+11,Ella,One Plus,Marketing,72936
+12,William,Apple,Human Resources,63947
+13,Harper,Vivo,Finance,33023
+14,Luna,Nokia,Human Resources,56376
+15,Camila,Nokia,Operations,20156
+16,Gianna,Sony,Business Development,34534
+17,Benjamin,Sony,Business Development,76050
+18,Lucas,Nokia,Sales,11003
+19,Henry,Apple,General Marketing,74608
+20,Abigail,Nokia,IT,50102
+21,Sofia,Samsung,Management,64633
+22,Avery,Asus,Operations,16955
+23,Scarlett,HP,Human Resources,35187
+24,Emily,Samsung,General Marketing,94907
+25,Aria,One Plus,Marketing,22277
+26,Theodore,Sony,Human Resources,27240
+27,Jack,Oppo,IT,26516
+28,Levi,Nokia,Operations,45124
+29,Alexander,Sony,Data Analytics,76431
+30,Nora,Vivo,Marketing,65677
+31,Hazel,Samsung,Marketing,54628
+32,Madison,Acer,Sales,56391
+33,Ellie,Asus,Human Resources,82645
+34,Lily,Samsung,Operations,43406
+35,Jacob,Nokia,Marketing,82433
+36,Asher,Nokia,Business Development,45731
+37,Aiden,Asus,Finance,35639
+38,Violet,Vivo,Management,44223
+39,Aurora,Apple,IT,91818
+40,Joseph,HP,Operations,95602
+41,Wyatt,Asus,Data Analytics,55283
+42,David,Nokia,Sales,37563
+43,Emilia,Sony,Operations,14190
+44,Stella,HP,Business Development,59979
+45,Zoe,Vivo,Business Development,20762
+46,Victoria,HP,Operations,41050
+47,Hannah,Sony,General Marketing,19345
+48,Dylan,HP,Operations,34394
+49,Lincoln,Asus,Finance,14415
+50,Thomas,HP,Finance,35681
+51,Maverick,HP,Sales,79539
+52,Ivy,Sony,General Marketing,46391
+53,Everly,Nokia,Marketing,75185
+54,Lillian,One Plus,Marketing,93794
+55,Paisley,Vivo,Human Resources,45327
+56,Elena,Apple,General Marketing,56636
+57,Naomi,Apple,IT,14176
+58,Isaiah,Asus,Data Analytics,97470
+59,Andrew,Apple,Data Analytics,99739
+60,Joshua,Sony,Finance,96983
+61,Nathan,Samsung,Sales,27926
+62,Nolan,Apple,Operations,86549
+63,Adrian,Samsung,Operations,75381
+64,Aaliyah,Vivo,Business Development,83771
+65,Ruby,Oppo,Marketing,36611
+66,Brooklyn,Samsung,IT,35173
+67,Alice,Vivo,Sales,57686
+68,Cameron,Asus,IT,66143
+69,Santiago,Apple,Business Development,35344
+70,Eli,Sony,IT,18270
+71,Aaron,Asus,IT,44557
+72,Ryan,Nokia,Marketing,33660
+73,Angel,Nokia,Marketing,41527
+74,Madelyn,Oppo,Business Development,27525
+75,Josephine,Oppo,Data Analytics,40213
+76,Bella,Oppo,Management,28969
+77,Skylar,Apple,Data Analytics,93979
+78,Cooper,Oppo,General Marketing,85764
+79,Waylon,Nokia,Management,98004
+80,Easton,Nokia,Data Analytics,37030
+81,Kai,Vivo,Finance,70224
+82,Natalia,Oppo,Marketing,29989
+83,Quinn,Sony,Sales,21267
+84,Caroline,Sony,Data Analytics,20438
+85,Allison,Oppo,Sales,69505
+86,Gabriella,Acer,General Marketing,23291
+87,Christian,Oppo,Business Development,82452
+88,Landon,Nokia,Marketing,59038
+89,Colton,Vivo,Marketing,25253
+90,Roman,Vivo,Finance,82767
+91,Ariana,Sony,Data Analytics,92159
+92,Emery,Apple,Operations,43984
+93,Lydia,HP,Sales,63012
+94,Axel,One Plus,IT,28924
+95,Brooks,Oppo,Marketing,61244
+96,Eva,Vivo,Sales,38851
+97,Adeline,Vivo,Marketing,91579
+98,Jose,Oppo,Business Development,35667
+99,Bennett,Acer,IT,63347
+100,Silas,Apple,Marketing,12496
+101,Nicholas,Asus,Marketing,81393
+102,Parker,Samsung,Management,67062
+103,Beau,One Plus,IT,29934
+104,Vivian,Sony,Business Development,79614
+105,Clara,One Plus,Operations,52940
+106,Weston,Sony,Human Resources,60822
+107,Austin,Sony,Sales,25993
+108,Connor,HP,Data Analytics,11205
+109,Maria,Nokia,Human Resources,42783
+110,Iris,HP,Business Development,83568
+111,Ayla,One Plus,Human Resources,94030
+112,Carson,Nokia,Sales,76431
+113,Dominic,One Plus,Operations,97932
+114,Xavier,Acer,Finance,66676
+115,Jaxson,Acer,Sales,87718
+116,Melody,Acer,Operations,30609
+117,Julia,Sony,General Marketing,29059
+118,Jonathan,HP,Human Resources,12304
+119,Robert,Apple,Finance,42401
+120,Jameson,Nokia,Sales,63820
+121,Ian,Sony,Management,96481
+122,Everett,Apple,Marketing,86798
+123,Arya,Acer,Marketing,86524
+124,Eden,Acer,Business Development,44283
+125,Remi,Asus,Sales,26119
+126,Vincent,Asus,IT,61713
+127,Legend,One Plus,Data Analytics,13790
+128,Myles,Sony,Business Development,75056
+129,Harrison,Nokia,Operations,38057
+130,Charlie,One Plus,Operations,81945
+131,Alaia,Samsung,General Marketing,29209
+132,Melanie,Vivo,Human Resources,68992
+133,Walker,Oppo,Human Resources,78463
+134,Jason,Samsung,Operations,20815
+135,Brayden,Apple,Management,11283
+136,Cole,Nokia,Operations,20357
+137,Nathaniel,Oppo,Sales,47709
+138,Alina,Nokia,Data Analytics,80492
+139,Lucia,Apple,IT,30743
+140,Ximena,Vivo,Data Analytics,25590
+141,George,Sony,Sales,37529
+142,Lorenzo,One Plus,Finance,70584
+143,Zion,One Plus,Data Analytics,84531
+144,Luis,Oppo,Business Development,19052
+145,Adalyn,Apple,Finance,40716
+146,Archer,HP,Data Analytics,51848
+147,Enzo,HP,Management,82472
+148,Jonah,Vivo,Finance,80897
+149,Isabel,HP,Operations,35913
+150,Reese,One Plus,Data Analytics,74634
+151,Emersyn,Apple,Marketing,21951
+152,Thiago,Asus,IT,35469
+153,Theo,Asus,Finance,33403
+154,River,Apple,Sales,10579
+155,Ayden,Asus,Management,89064
+156,Zachary,HP,Management,43740
+157,Calvin,Acer,Data Analytics,76610
+158,Braxton,Nokia,Operations,13623
+159,Esther,Samsung,Operations,88550
+160,Valeria,Sony,Management,23746
+161,Ashton,Apple,Data Analytics,23919
+162,Rhett,One Plus,Marketing,45405
+163,Atlas,Nokia,Human Resources,21417
+164,Jude,Vivo,Marketing,48351
+165,Bailey,Nokia,IT,82344
+166,Ember,Asus,IT,84467
+167,Bentley,Vivo,Management,88557
+168,Carlos,Acer,Management,27989
+169,Ryker,Asus,Management,64169
+170,Adriel,Apple,Marketing,46635
+171,Alexandra,Apple,Business Development,38506
+172,Faith,HP,Management,35467
+173,Arthur,Acer,Marketing,26628
+174,Ace,Asus,Finance,78599
+175,Tyler,Samsung,Finance,38694
+176,Jayce,Apple,Finance,87046
+177,Millie,Vivo,Human Resources,72921
+178,June,Samsung,IT,89699
+179,Kaiden,Nokia,Marketing,59599
+180,Maxwell,Apple,General Marketing,46160
+181,Juan,Sony,IT,27373
+182,Dean,Apple,Operations,26175
+183,Ada,Sony,Management,99993
+184,Anastasia,Oppo,Human Resources,99407
+185,Olive,Nokia,General Marketing,50747
+186,Matteo,Asus,Management,10839
+187,Malachi,Asus,Human Resources,34431
+188,Ivan,HP,Finance,32391
+189,Elliott,Asus,Data Analytics,37339
+190,Jesus,Acer,Operations,91263
+191,Amy,One Plus,Human Resources,62617
+192,Ruth,Oppo,General Marketing,62899
+193,Aubree,Acer,Data Analytics,71264
+194,Max,Acer,Data Analytics,78674
+195,Elliot,Vivo,Operations,17702
+196,Graham,Oppo,Sales,55899
+197,Arabella,Oppo,Management,27430
+198,Sara,Oppo,IT,66002
+199,Journee,Acer,Finance,59024
+200,Beckett,Vivo,Business Development,95854
+201,Amari,One Plus,Sales,46247
+202,Karter,Nokia,Operations,85203
+203,Timothy,Vivo,Marketing,96480
+204,Abraham,Samsung,IT,18195
+205,Jesse,Nokia,Human Resources,82602
+206,Selena,Apple,Human Resources,95404
+207,Oaklynn,Samsung,Management,57547
+208,Morgan,Oppo,Data Analytics,27649
+209,Zayden,One Plus,Business Development,55354
+210,Blake,Apple,Finance,97006
+211,Alejandro,Apple,Marketing,30382
+212,Dawson,Asus,IT,10375
+213,Juliana,Asus,Marketing,47085
+214,Finley,Acer,Marketing,36798
+215,Presley,Nokia,Human Resources,90623
+216,Tristan,Apple,Management,61425
+217,Victor,Sony,Sales,93485
+218,Avery,One Plus,Finance,25256
+219,Joel,Sony,General Marketing,74293
+220,Grant,One Plus,Finance,14451
+221,Eric,Nokia,Human Resources,74571
+222,London,One Plus,General Marketing,13495
+223,Kimberly,Sony,Operations,66876
+224,Elsie,HP,IT,20033
+225,Patrick,Nokia,General Marketing,16487
+226,Peter,Vivo,Finance,92878
+227,Richard,Samsung,Marketing,82325
+228,Edward,Nokia,Operations,79069
+229,Andres,Apple,Business Development,79155
+230,Nyla,One Plus,Sales,32709
+231,Vera,Nokia,Business Development,20316
+232,Hope,Vivo,General Marketing,68199
+233,Annie,Vivo,General Marketing,62478
+234,Kaia,Samsung,Sales,15384
+235,Myla,Asus,Sales,78372
+236,Adonis,HP,Human Resources,89218
+237,Kyrie,Vivo,Data Analytics,31576
+238,Matias,Asus,Operations,15239
+239,Oscar,HP,Business Development,35377
+240,Lukas,Nokia,Data Analytics,29510
+241,Harlow,Samsung,Data Analytics,35143
+242,Rachel,Acer,Management,58712
+243,Gracie,Vivo,Sales,48600
+244,Rowan,Samsung,Finance,47603
+245,Rafael,Asus,Management,44848
+246,Zane,Apple,Finance,59297
+247,Jeremy,Apple,Data Analytics,31344
+248,Lilah,Apple,Marketing,59193
+249,Adelyn,One Plus,Data Analytics,18757
+250,Phoebe,Vivo,Sales,14816
+251,Octavia,Acer,IT,30673
+252,Kash,Vivo,IT,88214
+253,Preston,Sony,IT,59307
+254,Kyler,Acer,Human Resources,43460
+255,Jax,Acer,Data Analytics,49945
+256,Jett,HP,Finance,16432
+257,Kaleb,Apple,Finance,94332
+258,Kayla,Nokia,Operations,21838
+259,Malia,Samsung,Business Development,37693
+260,Elaina,Apple,Marketing,74262
+261,Saylor,Apple,IT,24174
+262,Brooke,Vivo,Human Resources,30726
+263,Riley,Oppo,Data Analytics,39484
+264,Simon,Acer,General Marketing,14345
+265,Phoenix,Acer,Finance,56280
+266,Adelaide,Vivo,Marketing,15112
+267,Daniela,Vivo,Business Development,93378
+268,Kenneth,One Plus,Human Resources,52527
+269,Nico,Asus,Operations,13930
+270,Kaden,Asus,General Marketing,99264
+271,Lane,Asus,Data Analytics,92427
+272,Delaney,Sony,General Marketing,34380
+273,Dakota,Asus,Human Resources,85176
+274,Mya,Apple,Operations,78900
+275,Kairo,HP,Marketing,53052
+276,Maximus,Apple,Finance,73552
+277,Omar,Acer,Human Resources,59256
+278,Finley,Asus,Operations,53433
+279,Lucille,Samsung,Business Development,30963
+280,Trinity,Oppo,Sales,10246
+281,Gia,Sony,Sales,51046
+282,Tatum,Acer,Operations,47353
+283,Atticus,Samsung,Business Development,63237
+284,Crew,Acer,General Marketing,58828
+285,Brantley,Vivo,Sales,84662
+286,Kali,Acer,General Marketing,92567
+287,Stevie,Nokia,Management,73001
+288,Maggie,One Plus,Operations,98102
+289,Colin,Asus,Human Resources,34225
+290,Dallas,Vivo,General Marketing,77996
+291,Walter,Vivo,Sales,72663
+292,Brady,Samsung,Data Analytics,13199
+293,Hayden,Asus,Sales,70871
+294,Joanna,HP,Management,32312
+295,Jocelyn,Oppo,Management,42433
+296,Bryan,HP,Marketing,54932
+297,Aidan,Apple,Sales,99845
+298,Cohen,Sony,Human Resources,49083
+299,Brian,Nokia,Finance,39098
+300,Cayden,Asus,Operations,49423
+301,Andre,Nokia,Data Analytics,74308
+302,Leia,HP,Data Analytics,26374
+303,Paige,Sony,Marketing,28184
+304,Niko,Samsung,Operations,58169
+305,Maximiliano,Sony,Data Analytics,86102
+306,Zander,Vivo,Management,29457
+307,Khalil,Apple,General Marketing,16376
+308,Rory,Acer,Business Development,72673
+309,Harley,Sony,Operations,36242
+310,Lia,Acer,Operations,43707
+311,Phoenix,HP,Data Analytics,94685
+312,Francisco,Vivo,Finance,98628
+313,Cruz,Vivo,Finance,30307
+314,Kobe,One Plus,Finance,68160
+315,Thea,Vivo,Sales,79835
+316,Jayla,One Plus,Operations,43670
+317,Reid,Sony,Operations,71958
+318,Daxton,Nokia,Finance,67868
+319,Vivienne,HP,Management,89458
+320,Hallie,Oppo,Finance,24806
+321,Madilyn,Asus,Operations,41799
+322,Orion,Sony,Sales,24435
+323,Spencer,Oppo,Management,30995
+324,Ophelia,HP,Marketing,18772
+325,Celeste,Samsung,Data Analytics,58627
+326,Alayah,Oppo,General Marketing,26757
+327,Colson,Samsung,Business Development,95672
+328,Cairo,Oppo,IT,37497
+329,Gunner,Asus,Management,34657
+330,Nina,Samsung,Sales,18007
+331,Briella,Sony,Data Analytics,99144
+332,Wade,Apple,Business Development,20955
+333,Chance,Nokia,Finance,11119
+334,Odin,Acer,Business Development,85768
+335,Anderson,HP,General Marketing,43267
+336,Amari,Apple,Human Resources,22116
+337,Adriana,Asus,Data Analytics,72400
+338,Kane,Apple,Management,56677
+339,Raymond,Apple,Business Development,12804
+340,Cristian,Oppo,Business Development,90953
+341,Kalani,Nokia,IT,32445
+342,Aniyah,Samsung,IT,19261
+343,Aziel,Acer,IT,46278
+344,Prince,Sony,Operations,12126
+345,Ezequiel,Vivo,Management,68599
+346,Jake,Nokia,Management,26144
+347,Otto,Samsung,Marketing,84123
+348,Amina,Oppo,Management,96456
+349,Ariyah,Oppo,Human Resources,21321
+350,Adelynn,Acer,Sales,16452
+351,Remington,One Plus,Data Analytics,53240
+352,Reign,HP,Human Resources,34212
+353,Eduardo,Samsung,Operations,82512
+354,Rylan,One Plus,Marketing,36580
+355,Ali,Apple,Finance,69859
+356,Willa,One Plus,Management,77884
+357,Avianna,Acer,Marketing,68965
+358,Makayla,Vivo,Business Development,73090
+359,Gracelyn,Acer,Operations,67147
+360,Elle,Vivo,Human Resources,30943
+361,Amiyah,Vivo,Sales,13113
+362,Arielle,Acer,General Marketing,17536
+363,Elianna,Asus,Business Development,27539
+364,Giselle,Vivo,Business Development,73712
