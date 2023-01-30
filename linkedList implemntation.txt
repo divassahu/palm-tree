@@ -1,0 +1,72 @@
+A linked list is a data structure in computer science that consists of a sequence of nodes, where each node contains an element of data and a reference (or "link") to the next node in the sequence. Unlike arrays, linked lists do not have a fixed size, and elements can be easily added or removed from the list.
+
+There are two main types of linked lists: singly linked lists and doubly linked lists. In a singly linked list, each node has a reference to the next node in the sequence, but not to the previous node. In a doubly linked list, each node has a reference to both the next and previous nodes in the sequence.
+
+Applications of linked lists include implementation of stacks, queues, and other data structures, as well as representing graphs and trees.
+
+Advantages of linked lists include dynamic size, efficient insertion and deletion operations, and the ability to traverse the list in a forward direction. Disadvantages of linked lists include slow random access time, as the time to access a specific element in the list increases linearly with the size of the list, and higher memory overhead compared to arrays, as each node in the list requires additional memory to store the reference to the next node.
+
+Linked lists can be implemented using arrays, where each element of the array represents a node in the linked list and the array indices are used to store the links between the nodes. This approach can be useful for implementing linked lists with a fixed size, but is less efficient for dynamic linked lists where the size may change frequently.
+
+
+
+
+
+class LinkedList {
+    private int[] data;
+    private int[] next;
+    private int head;
+    private int tail;
+    private int size;
+
+    public LinkedList(int maxSize) {
+        data = new int[maxSize];
+        next = new int[maxSize];
+        head = -1;
+        tail = -1;
+        size = 0;
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    public boolean isFull() {
+        return size == data.length;
+    }
+
+    public void insert(int element) {
+        if (isFull()) {
+            throw new IllegalStateException("List is full");
+        }
+        if (head == -1) {
+            head = 0;
+        }
+        tail = (tail + 1) % data.length;
+        data[tail] = element;
+        next[tail] = -1;
+        if (head != tail) {
+            next[prev(tail)] = tail;
+        }
+        size++;
+    }
+
+    public int remove() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("List is empty");
+        }
+        int element = data[head];
+        head = next[head];
+        size--;
+        if (isEmpty()) {
+            head = -1;
+            tail = -1;
+        }
+        return element;
+    }
+
+    private int prev(int index) {
+        return (index + data.length - 1) % data.length;
+    }
+}
+In this implementation, the data array stores the elements of the linked list, and the next array stores the links between the nodes. The head and tail variables represent the first and last nodes in the list, respectively, and the size variable keeps track of the number of elements in the list. The insert and remove methods are used to add and remove elements from the list, respectively. The prev method is a helper method that returns the previous node in the list for a given node index.
