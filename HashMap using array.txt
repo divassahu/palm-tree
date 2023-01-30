@@ -1,0 +1,67 @@
+class HashMap {
+    private class Entry {
+        private int key;
+        private int value;
+
+        public Entry(int key, int value) {
+            this.key = key;
+            this.value = value;
+        }
+    }
+
+    private Entry[] entries;
+    private int size;
+
+    public HashMap(int capacity) {
+        entries = new Entry[capacity];
+        size = 0;
+    }
+
+    public void put(int key, int value) {
+        int index = hash(key);
+        while (entries[index] != null && entries[index].key != key) {
+            index = (index + 1) % entries.length;
+        }
+        entries[index] = new Entry(key, value);
+        size++;
+    }
+
+    public Integer get(int key) {
+        int index = hash(key);
+        while (entries[index] != null) {
+            if (entries[index].key == key) {
+                return entries[index].value;
+            }
+            index = (index + 1) % entries.length;
+        }
+        return null;
+    }
+
+    public void remove(int key) {
+        int index = hash(key);
+        while (entries[index] != null) {
+            if (entries[index].key == key) {
+                entries[index] = null;
+                size--;
+                rehash(index);
+                return;
+            }
+            index = (index + 1) % entries.length;
+        }
+    }
+
+    private int hash(int key) {
+        return key % entries.length;
+    }
+
+    private void rehash(int removedIndex) {
+        int index = (removedIndex + 1) % entries.length;
+        while (entries[index] != null) {
+            Entry entry = entries[index];
+            entries[index] = null;
+            size--;
+            put(entry.key, entry.value);
+            index = (index + 1) % entries.length;
+        }
+    }
+}
