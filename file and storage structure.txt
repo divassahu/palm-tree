@@ -1,0 +1,22 @@
+File Structure: Refers to the way data is organized in a file on a storage device. It refers to the logical organization of data within a file, such as a tree, graph, linked list, etc.
+
+Storage Structure: Refers to the physical organization of data on a storage device, such as magnetic disk, tape, or flash memory. It refers to the way data is stored on the device, such as blocks, clusters, or sectors.
+
+In other words, file structure is concerned with how data is organized and accessed logically, while storage structure is concerned with how data is physically stored and retrieved.
+
+
+
+File Structure	Storage Structure
+Logical organization of data within a file	Physical organization of data on a storage device
+Concerned with data organization and access	Concerned with data storage and retrieval
+Examples: tree, graph, linked list	Examples: magnetic disk, tape, flash memory
+
+
+File Structure	Storage Structure
+Determines the way data is accessed, searched and updated	Determines the way data is stored and retrieved
+Can be implemented using various data structures, such as arrays, linked lists, etc.	Can be implemented using various storage technologies, such as hard drives, solid state drives, etc.
+Can be changed as per the requirement of the application	Can be limited by the physical characteristics of the storage device
+Can affect the efficiency and performance of data retrieval and modification	Can affect the speed and capacity of data storage and retrieval
+Example: A file system in an operating system is an example of file structure	Example: A partitioned hard drive is an example of storage structure
+
+
