@@ -1,0 +1,569 @@
+
+SQL basic--
+-----------------------------------------------------------------------------------------------------------------------------------
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 11
+Server version: 8.0.30 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases
+    -> show databases;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'show databases' at line 2
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.16 sec)
+
+mysql> create database ProductList
+    -> create database ProductList;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'create database ProductList' at line 2
+mysql> create database productList;
+Query OK, 1 row affected (0.13 sec)
+
+mysql> show databases
+    -> show databases;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'show databases' at line 2
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| productlist        |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> create table product(productName varchar,price int, quantity int);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',price int, quantity int)' at line 1
+mysql> create table product(productName varchar(255),price int, quantity int);
+ERROR 1046 (3D000): No database selected
+mysql> drop ProductList;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ProductList' at line 1
+mysql> drop productList;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'productList' at line 1
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| productlist        |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> drop productlist
+    -> clear
+    -> clear;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'productlist
+clear
+clear' at line 1
+mysql> dorp productlist;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dorp productlist' at line 1
+mysql> drop productlist;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'productlist' at line 1
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| productlist        |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> use productlist
+Database changed
+mysql> drop productlist;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'productlist' at line 1
+mysql> use productlist
+Database changed
+mysql> create database sb101;
+Query OK, 1 row affected (0.05 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| productlist        |
+| sb101              |
+| sys                |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> use sb101;
+Database changed
+mysql> create table product(productName varchar(255),price int, quantity int);
+Query OK, 0 rows affected (0.22 sec)
+
+mysql> select * from product;
+Empty set (0.00 sec)
+
+mysql> insert into product values('shoes',6999,5);
+Query OK, 1 row affected (0.21 sec)
+
+mysql> insert into product values('shorts',699,8);
+Query OK, 1 row affected (0.16 sec)
+
+mysql> select * from product;
++-------------+-------+----------+
+| productName | price | quantity |
++-------------+-------+----------+
+| shoes       |  6999 |        5 |
+| shorts      |   699 |        8 |
++-------------+-------+----------+
+2 rows in set (0.00 sec)
+
+mysql> insert into product (productName,price,quantity) values ('shirt',1899,11);
+Query OK, 1 row affected (0.13 sec)
+
+mysql> select price from product;
++-------+
+| price |
++-------+
+|  6999 |
+|   699 |
+|  1899 |
++-------+
+3 rows in set (0.00 sec)
+
+mysql> select * form product where price>1000;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'form product where price>1000' at line 1
+mysql> select * form product where price=699;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'form product where price=699' at line 1
+mysql> select * from product where price=699;
++-------------+-------+----------+
+| productName | price | quantity |
++-------------+-------+----------+
+| shorts      |   699 |        8 |
++-------------+-------+----------+
+1 row in set (0.00 sec)
+
+mysql> select * from product where price>699;
++-------------+-------+----------+
+| productName | price | quantity |
++-------------+-------+----------+
+| shoes       |  6999 |        5 |
+| shirt       |  1899 |       11 |
++-------------+-------+----------+
+2 rows in set (0.00 sec)
+
+mysql> drop product;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'product' at line 1
+mysql> drop table product;
+Query OK, 0 rows affected (0.12 sec)
+
+mysql> show databases
+    -> show databases;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'show databases' at line 2
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| productlist        |
+| sb101              |
+| sys                |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> drop database sb101;
+Query OK, 0 rows affected (0.14 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| productlist        |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> create database sb101;
+Query OK, 1 row affected (0.13 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| productlist        |
+| sb101              |
+| sys                |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> use sb101;
+Database changed
+mysql> create table Deposite;
+ERROR 4028 (HY000): A table must have at least one visible column.
+mysql> create table DEPOSITE (actNo varchar(25), cName varchar(20), bName varchar(20), amount int, aDate date);
+Query OK, 0 rows affected (0.51 sec)
+
+mysql> select * from DEPOSUTE;
+ERROR 1146 (42S02): Table 'sb101.deposute' doesn't exist
+mysql> select * from DEPOSITE;
+Empty set (0.00 sec)
+
+mysql> create table branch (bName varchar(20), city varchar(20));
+Query OK, 0 rows affected (0.61 sec)
+
+mysql> create table coustomer (cName varchar(25), city varchar(25));
+Query OK, 0 rows affected (0.20 sec)
+
+mysql> create table borrow(loanNo varchar(5), cName varchar(20), bName varchar(20), amount int);
+Query OK, 0 rows affected (0.20 sec)
+
+mysql> desc DEPOSITE;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| actNo  | varchar(25) | YES  |     | NULL    |       |
+| cName  | varchar(20) | YES  |     | NULL    |       |
+| bName  | varchar(20) | YES  |     | NULL    |       |
+| amount | int         | YES  |     | NULL    |       |
+| aDate  | date        | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> desc branch;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| bName | varchar(20) | YES  |     | NULL    |       |
+| city  | varchar(20) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> desc coustomer;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| cName | varchar(25) | YES  |     | NULL    |       |
+| city  | varchar(25) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> desc borrow;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| loanNo | varchar(5)  | YES  |     | NULL    |       |
+| cName  | varchar(20) | YES  |     | NULL    |       |
+| bName  | varchar(20) | YES  |     | NULL    |       |
+| amount | int         | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> insert into DEPOSITE values (100, 'ANIL', 'VERC', 1000, 10-mar-95);
+ERROR 1054 (42S22): Unknown column 'mar' in 'field list'
+mysql> insert into DEPOSITE values (100, 'ANIL', 'VERC', 1000, 10-03-95);
+ERROR 1292 (22007): Incorrect date value: '-88' for column 'aDate' at row 1
+mysql> insert into DEPOSITE values (100, 'ANIL', 'VERC', 1000, 10-03-1995);
+ERROR 1292 (22007): Incorrect date value: '-1988' for column 'aDate' at row 1
+mysql> insert into DEPOSITE values (100, 'ANIL', 'VERC', 1000, 1995-03-10);
+ERROR 1292 (22007): Incorrect date value: '1982' for column 'aDate' at row 1
+mysql> insert into DEPOSITE values (100, 'ANIL', 'VERC', 1000, '1995-03-10');
+Query OK, 1 row affected (0.18 sec)
+
+mysql> insert into DEPOSITE values (101, 'SUNIL', 'MGROAD', 5000, '1996-01-04');
+Query OK, 1 row affected (0.13 sec)
+
+mysql> insert into DEPOSITE values (102, 'RAHUL', 'KAROLBAGH', 3500, '1995-11-17');
+Query OK, 1 row affected (0.14 sec)
+
+mysql> insert into DEPOSITE values (103, 'MADHURI', 'CHANDNI', 1200, '1995-12-17');
+Query OK, 1 row affected (0.15 sec)
+
+mysql> insert into DEPOSITE values (104, 'PRAMOD', 'MGROAD', 3000, '1996-03-27');
+Query OK, 1 row affected (0.15 sec)
+
+mysql> insert into DEPOSITE values (105, 'SANDEEP', 'KAROLBAGH', 2000, '1996-03-31');
+Query OK, 1 row affected (0.15 sec)
+
+mysql> desc DEPOSITE;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| actNo  | varchar(25) | YES  |     | NULL    |       |
+| cName  | varchar(20) | YES  |     | NULL    |       |
+| bName  | varchar(20) | YES  |     | NULL    |       |
+| amount | int         | YES  |     | NULL    |       |
+| aDate  | date        | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> select * from DEPOSITE;
++-------+---------+-----------+--------+------------+
+| actNo | cName   | bName     | amount | aDate      |
++-------+---------+-----------+--------+------------+
+| 100   | ANIL    | VERC      |   1000 | 1995-03-10 |
+| 101   | SUNIL   | MGROAD    |   5000 | 1996-01-04 |
+| 102   | RAHUL   | KAROLBAGH |   3500 | 1995-11-17 |
+| 103   | MADHURI | CHANDNI   |   1200 | 1995-12-17 |
+| 104   | PRAMOD  | MGROAD    |   3000 | 1996-03-27 |
+| 105   | SANDEEP | KAROLBAGH |   2000 | 1996-03-31 |
++-------+---------+-----------+--------+------------+
+6 rows in set (0.00 sec)
+
+mysql> inser into branch values ('VRCE', 'NAGPUR');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'inser into branch values ('VRCE', 'NAGPUR')' at line 1
+mysql> insert into branch values ('VRCE', 'NAGPUR');
+Query OK, 1 row affected (0.14 sec)
+
+mysql> insret into branch values ('KAROLBAGH', 'DELHI');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'insret into branch values ('KAROLBAGH', 'DELHI')' at line 1
+mysql> insert into branch values ('KAROLBAGH', 'DELHI');
+Query OK, 1 row affected (0.13 sec)
+
+mysql> insert into branch values ('CHANDNI', 'DELHI');
+Query OK, 1 row affected (0.14 sec)
+
+mysql> insert into branch values ('MGROAD', 'BANGLORE');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from branch;
++-----------+----------+
+| bName     | city     |
++-----------+----------+
+| VRCE      | NAGPUR   |
+| KAROLBAGH | DELHI    |
+| CHANDNI   | DELHI    |
+| MGROAD    | BANGLORE |
++-----------+----------+
+4 rows in set (0.00 sec)
+
+mysql> insert into coustmer values ('ANIL', 'CALCUTTA');
+ERROR 1146 (42S02): Table 'sb101.coustmer' doesn't exist
+mysql> insert into coustomer values ('ANIL', 'CALCUTTA');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into coustomer values ('RAHUL', 'BARODA');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into coustomer values ('MADHURI', 'NAGPUR');
+Query OK, 1 row affected (0.17 sec)
+
+mysql> insert into coustomer values ('PRAMOD', 'NAGPUR');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into coustomer values ('SUNIL', 'DELHI');
+Query OK, 1 row affected (0.13 sec)
+
+mysql> select * from coustomer;
++---------+----------+
+| cName   | city     |
++---------+----------+
+| ANIL    | CALCUTTA |
+| RAHUL   | BARODA   |
+| MADHURI | NAGPUR   |
+| PRAMOD  | NAGPUR   |
+| SUNIL   | DELHI    |
++---------+----------+
+5 rows in set (0.00 sec)
+
+mysql> insert into borrow values(201, 'ANIL', 'VRCE', 1000);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into borrow values(206, 'RAHUL', 'KAROLBAGH', 5000);
+Query OK, 1 row affected (0.15 sec)
+
+mysql> insert into borrow values(311, 'SUNIL', 'MGROAD', 3000);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into borrow values(321, 'MADHURI', 'CHANDNI', 2000);
+Query OK, 1 row affected (0.14 sec)
+
+mysql> insert into borrow values(375, 'PRAMOD', 'MGROAD', 8000);
+Query OK, 1 row affected (0.14 sec)
+
+mysql> select * from borrow where amount>2000 AND amount<3000;
+Empty set (0.00 sec)
+
+mysql> select * from borrow;
++--------+---------+-----------+--------+
+| loanNo | cName   | bName     | amount |
++--------+---------+-----------+--------+
+| 201    | ANIL    | VRCE      |   1000 |
+| 206    | RAHUL   | KAROLBAGH |   5000 |
+| 311    | SUNIL   | MGROAD    |   3000 |
+| 321    | MADHURI | CHANDNI   |   2000 |
+| 375    | PRAMOD  | MGROAD    |   8000 |
++--------+---------+-----------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select * from borrow where amount>=2000 AND amount<=3000;
++--------+---------+---------+--------+
+| loanNo | cName   | bName   | amount |
++--------+---------+---------+--------+
+| 311    | SUNIL   | MGROAD  |   3000 |
+| 321    | MADHURI | CHANDNI |   2000 |
++--------+---------+---------+--------+
+2 rows in set (0.00 sec)
+
+mysql> select * form DEPOSITE;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'form DEPOSITE' at line 1
+mysql> select * from DEPOSITE;
++-------+---------+-----------+--------+------------+
+| actNo | cName   | bName     | amount | aDate      |
++-------+---------+-----------+--------+------------+
+| 100   | ANIL    | VERC      |   1000 | 1995-03-10 |
+| 101   | SUNIL   | MGROAD    |   5000 | 1996-01-04 |
+| 102   | RAHUL   | KAROLBAGH |   3500 | 1995-11-17 |
+| 103   | MADHURI | CHANDNI   |   1200 | 1995-12-17 |
+| 104   | PRAMOD  | MGROAD    |   3000 | 1996-03-27 |
+| 105   | SANDEEP | KAROLBAGH |   2000 | 1996-03-31 |
++-------+---------+-----------+--------+------------+
+6 rows in set (0.00 sec)
+
+mysql> select cNAme,actNo from DEPOSITE;
++---------+-------+
+| cNAme   | actNo |
++---------+-------+
+| ANIL    | 100   |
+| SUNIL   | 101   |
+| RAHUL   | 102   |
+| MADHURI | 103   |
+| PRAMOD  | 104   |
+| SANDEEP | 105   |
++---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> select cName form DEPOSITE where city ='NAGPUR';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DEPOSITE where city ='NAGPUR'' at line 1
+mysql> select cName form sb101 where city ='NAGPUR';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'sb101 where city ='NAGPUR'' at line 1
+mysql> select cName form coustomer where city ='NAGPUR';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'coustomer where city ='NAGPUR'' at line 1
+mysql> select cName form coustomer where city =NAGPUR;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'coustomer where city =NAGPUR' at line 1
+mysql> select cName form coustomer where city IS NAGPUR;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'coustomer where city IS NAGPUR' at line 1
+mysql> select cName form coustomer where city IS 'NAGPUR';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'coustomer where city IS 'NAGPUR'' at line 1
+mysql> select cName from coustomer where city = 'NAGPUR';
++---------+
+| cName   |
++---------+
+| MADHURI |
+| PRAMOD  |
++---------+
+2 rows in set (0.00 sec)
+
+mysql> select cName from DEPOSITE where date>'1995-11-17';
+ERROR 1054 (42S22): Unknown column 'date' in 'where clause'
+mysql> select cName from DEPOSITE where date>1995-11-17;
+ERROR 1054 (42S22): Unknown column 'date' in 'where clause'
+mysql> select cName from DEPOSITE where aDate>'1995-11-17';
++---------+
+| cName   |
++---------+
+| SUNIL   |
+| MADHURI |
+| PRAMOD  |
+| SANDEEP |
++---------+
+4 rows in set (0.02 sec)
+
+mysql> select * from DEPOSITE where cName LIKE 'c%';
+Empty set (0.00 sec)
+
+mysql> select * from DEPOSITE where cName LIKE 'C%';
+Empty set (0.00 sec)
+
+mysql> select * from DEPOSITE where cName LIKE 'S%';
++-------+---------+-----------+--------+------------+
+| actNo | cName   | bName     | amount | aDate      |
++-------+---------+-----------+--------+------------+
+| 101   | SUNIL   | MGROAD    |   5000 | 1996-01-04 |
+| 105   | SANDEEP | KAROLBAGH |   2000 | 1996-03-31 |
++-------+---------+-----------+--------+------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from borrow where cName LIKE '_U%';
++--------+-------+--------+--------+
+| loanNo | cName | bName  | amount |
++--------+-------+--------+--------+
+| 311    | SUNIL | MGROAD |   3000 |
++--------+-------+--------+--------+
+1 row in set (0.00 sec)
+
+mysql> select * from DEPOSITE where bName = 'CHANDNI' OR 'MGROAD';
++-------+---------+---------+--------+------------+
+| actNo | cName   | bName   | amount | aDate      |
++-------+---------+---------+--------+------------+
+| 103   | MADHURI | CHANDNI |   1200 | 1995-12-17 |
++-------+---------+---------+--------+------------+
+1 row in set, 1 warning (0.00 sec)
+
+mysql> select * from DEPOSITE where bName <> 'CHANDNI' OR 'MGROAD';
++-------+---------+-----------+--------+------------+
+| actNo | cName   | bName     | amount | aDate      |
++-------+---------+-----------+--------+------------+
+| 100   | ANIL    | VERC      |   1000 | 1995-03-10 |
+| 101   | SUNIL   | MGROAD    |   5000 | 1996-01-04 |
+| 102   | RAHUL   | KAROLBAGH |   3500 | 1995-11-17 |
+| 104   | PRAMOD  | MGROAD    |   3000 | 1996-03-27 |
+| 105   | SANDEEP | KAROLBAGH |   2000 | 1996-03-31 |
++-------+---------+-----------+--------+------------+
+5 rows in set, 1 warning (0.00 sec)
+
+mysql> select * from DEPOSITE where amount >1000 order by cName asc;
++-------+---------+-----------+--------+------------+
+| actNo | cName   | bName     | amount | aDate      |
++-------+---------+-----------+--------+------------+
+| 103   | MADHURI | CHANDNI   |   1200 | 1995-12-17 |
+| 104   | PRAMOD  | MGROAD    |   3000 | 1996-03-27 |
+| 102   | RAHUL   | KAROLBAGH |   3500 | 1995-11-17 |
+| 105   | SANDEEP | KAROLBAGH |   2000 | 1996-03-31 |
+| 101   | SUNIL   | MGROAD    |   5000 | 1996-01-04 |
++-------+---------+-----------+--------+------------+
+5 rows in set (0.10 sec)
+
+mysql> select * from DEPOSITE where amount >1000 order by cName desc;
++-------+---------+-----------+--------+------------+
+| actNo | cName   | bName     | amount | aDate      |
++-------+---------+-----------+--------+------------+
+| 101   | SUNIL   | MGROAD    |   5000 | 1996-01-04 |
+| 105   | SANDEEP | KAROLBAGH |   2000 | 1996-03-31 |
+| 102   | RAHUL   | KAROLBAGH |   3500 | 1995-11-17 |
+| 104   | PRAMOD  | MGROAD    |   3000 | 1996-03-27 |
+| 103   | MADHURI | CHANDNI   |   1200 | 1995-12-17 |
++-------+---------+-----------+--------+------------+
+5 rows in set (0.00 sec)
+
+mysql> select * from borrow where cName like '__A%' or '__D%';
++--------+--------+--------+--------+
+| loanNo | cName  | bName  | amount |
++--------+--------+--------+--------+
+| 375    | PRAMOD | MGROAD |   8000 |
++--------+--------+--------+--------+
+1 row in set, 1 warning (0.00 sec)
