@@ -1,0 +1,140 @@
+A Stack and a Queue are both linear data structures that store elements in a linear manner. However, they have different access policies, which determine how elements are added and removed from the data structure.
+
+A Stack is a Last-In-First-Out (LIFO) data structure, meaning that the last element that was added to the stack will be the first one to be removed. The elements are added to the top of the stack and removed from the top of the stack. This is similar to a pile of plates, where the last plate added will be the first one to be taken away.
+
+A Queue is a First-In-First-Out (FIFO) data structure, meaning that the first element that was added to the queue will be the first one to be removed. The elements are added to the rear of the queue and removed from the front of the queue. This is similar to a line of people waiting in a queue, where the first person to join the queue will be the first one to leave.
+
+In terms of implementation, a Stack can be implemented using an array or a linked list, while a Queue can also be implemented using an array, linked list or a circular buffer.
+
+One key difference between a Stack and a Queue is their use cases. Stacks are often used for evaluating expressions, implementing function calls and for undo operations in text editors. Queues are used for scheduling processes in an operating system, as well as for implementing communication protocols and task scheduling in computer networks.
+
+Another difference between a Stack and a Queue is their time and space complexity. The time complexity for adding an element to a stack or queue is usually O(1), which means that it takes a constant amount of time regardless of the size of the data structure. The time complexity for removing an element from a stack or queue is also O(1) in the average case.
+
+The space complexity for a Stack or Queue depends on the implementation. If a Stack is implemented using an array, then its space complexity will be O(n), where n is the number of elements in the stack. If a Stack is implemented using a linked list, then its space complexity will be O(1), because the space required to store each element is proportional to the number of elements. The same is true for Queues.
+
+Finally, Stacks and Queues have different limitations. For example, Stacks have a limited size and once the stack is full, no more elements can be added to the stack until some elements are removed. This is called stack overflow. Queues also have a limited size, but they handle overflow differently. When a Queue is full, and a new element needs to be added to the queue, the oldest element in the queue is usually removed to make room for the new element. This is called circular buffering.
+
+In conclusion, Stacks and Queues are both linear data structures that store elements in a linear manner. However, they have different access policies and use cases, and they have different time and space complexities and limitations. Stacks are best used for evaluating expressions, implementing function calls and for undo operations, while Queues are best used for scheduling processes, implementing communication protocols and task scheduling.
+
+
+Example of Stack implementation using an Array:
+
+
+import java.util.EmptyStackException;
+
+class Stack {
+    int top = -1;
+    int[] stack = new int[100];
+
+    void push(int data) {
+        if (top == 99) {
+            System.out.println("Stack overflow");
+            return;
+        }
+
+        stack[++top] = data;
+    }
+
+    int pop() {
+        if (top == -1) {
+            System.out.println("Stack underflow");
+            throw new EmptyStackException();
+        }
+
+        return stack[top--];
+    }
+}
+Example of Stack implementation using a Linked List:
+
+
+class Node {
+    int data;
+    Node next;
+}
+
+class Stack {
+    Node head;
+
+    void push(int data) {
+        Node newNode = new Node();
+        newNode.data = data;
+        newNode.next = head;
+        head = newNode;
+    }
+
+    int pop() {
+        if (head == null) {
+            System.out.println("Stack underflow");
+            throw new EmptyStackException();
+        }
+
+        int data = head.data;
+        head = head.next;
+        return data;
+    }
+}
+
+Example of Queue implementation using an Array:
+
+class Queue {
+    int front = 0, rear = -1;
+    int[] queue = new int[100];
+
+    void enqueue(int data) {
+        if (rear == 99) {
+            System.out.println("Queue overflow");
+            return;
+        }
+
+        queue[++rear] = data;
+    }
+
+    int dequeue() {
+        if (front > rear) {
+            System.out.println("Queue underflow");
+            throw new NoSuchElementException();
+        }
+
+        return queue[front++];
+    }
+}
+Example of Queue implementation using a Linked List:
+
+class Node {
+    int data;
+    Node next;
+}
+
+class Queue {
+    Node front;
+    Node rear;
+
+    void enqueue(int data) {
+        Node newNode = new Node();
+        newNode.data = data;
+        newNode.next = null;
+
+        if (rear == null) {
+            front = rear = newNode;
+            return;
+        }
+
+        rear.next = newNode;
+        rear = newNode;
+    }
+
+    int dequeue() {
+        if (front == null) {
+            System.out.println("Queue underflow");
+            throw new NoSuchElementException();
+        }
+
+        int data = front.data;
+        front = front.next;
+
+        if (front == null)
+            rear = null;
+
+        return data;
+    }
+}
