@@ -1,6 +1,7 @@
 package streamApiAssign;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -30,6 +31,10 @@ public class ObjectToMap {
 		long count= peopleList.stream().count();
 		
 		System.out.println("the number of element are "+ count);
+		
+		List<People> sortedList=peopleList.stream().sorted(Comparator.comparing(People::getAge)).collect(Collectors.toList());
+		
+		System.out.println("sorted list according to age "+sortedList);
 		
 		
 		

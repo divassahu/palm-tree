@@ -25,6 +25,13 @@ public class Main1 {
 		System.out.println("even List divisible by 2 and 4 "+newList);
 		System.out.println("even List "+ resultList);
 		System.out.println("OddList "+ oddList);
+		Long count=numbers.stream().count();
+		
+		System.out.println("number of elemnt is the list are "+count);
+		
+		int max=numbers.stream().max(Integer::compare).get();
+		
+		System.out.println("maximum element in list is "+max);
 
 	}
 
