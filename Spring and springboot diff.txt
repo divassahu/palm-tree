@@ -1,0 +1,19 @@
+Spring is an open-source framework for building Java applications. It provides a comprehensive programming and configuration model for modern Java-based enterprise applications.
+
+Spring Boot is a framework built on top of the Spring framework that makes it easier to create stand-alone, production-grade applications. It provides pre-configured defaults for many components, reduces the amount of XML configuration required, and automatically configures necessary components based on the dependencies added to the project.
+
+The advantages of using Spring Boot over Spring are:
+
+Simplified Configuration: Spring Boot provides pre-configured defaults for many components and reduces the amount of XML configuration required.
+
+Auto Configuration: Spring Boot automatically configures necessary components based on the dependencies added to the project, making it easier to get started.
+
+Standalone Applications: Spring Boot creates stand-alone, production-grade applications that you can "just run."
+
+Embeddable Server: Spring Boot includes an embedded Tomcat server, eliminating the need to deploy to an external server.
+
+Actuator: Spring Boot includes built-in endpoints for monitoring and managing the application, making it easier to monitor and maintain.
+
+CLI: Spring Boot includes a command-line interface (CLI) that can be used to quickly develop and test Spring applications.
+
+Testing: Spring Boot provides many tools to facilitate testing and make it easier to write tests for your application.
