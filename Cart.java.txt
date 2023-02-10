@@ -1,0 +1,34 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Cart {
+  private List<String> items = new ArrayList<>();
+
+  public void addToCart(String item) {
+    items.add(item);
+    System.out.println(item + " has been added to the cart.");
+  }
+
+  public void removeFromCart(String item) {
+    if (items.contains(item)) {
+      items.remove(item);
+      System.out.println(item + " has been removed from the cart.");
+    } else {
+      System.out.println(item + " not found in cart.");
+    }
+  }
+
+  public static void main(String[] args) {
+    Cart cart = new Cart();
+
+    cart.addToCart("apple");
+    cart.addToCart("banana");
+    cart.addToCart("cherry");
+
+    System.out.println("Cart: " + cart.items);
+
+    cart.removeFromCart("banana");
+
+    System.out.println("Cart: " + cart.items);
+  }
+}
