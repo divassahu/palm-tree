@@ -1,0 +1,92 @@
+import java.util.*;
+
+class Student {
+    private String name;
+    private int age;
+    private String id;
+    private double gpa;
+
+    public Student(String name, int age, String id, double gpa) {
+        this.name = name;
+        this.age = age;
+        this.id = id;
+        this.gpa = gpa;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public double getGpa() {
+        return gpa;
+    }
+}
+
+class StudentManagementSystem {
+    private List<Student> students = new ArrayList<>();
+
+    public void addStudent(Student student) {
+        students.add(student);
+    }
+
+    public void removeStudent(String id) {
+        for (int i = 0; i < students.size(); i++) {
+            if (students.get(i).getId().equals(id)) {
+                students.remove(i);
+                break;
+            }
+        }
+    }
+
+    public List<Student> searchStudents(String name) {
+        List<Student> result = new ArrayList<>();
+        for (Student student : students) {
+            if (student.getName().contains(name)) {
+                result.add(student);
+            }
+        }
+        return result;
+    }
+
+    public void displayAllStudents() {
+        for (Student student : students) {
+            System.out.println("Name: " + student.getName());
+            System.out.println("Age: " + student.getAge());
+            System.out.println("ID: " + student.getId());
+            System.out.println("GPA: " + student.getGpa());
+            System.out.println("-------------------");
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        StudentManagementSystem system = new StudentManagementSystem();
+
+        system.addStudent(new Student("John Doe", 20, "001", 3.5));
+        system.addStudent(new Student("Jane Doe", 19, "002", 3.8));
+        system.addStudent(new Student("Jim Doe", 21, "003", 3.2));
+
+        system.displayAllStudents();
+
+        List<Student> result = system.searchStudents("Jane");
+        for (Student student : result) {
+            System.out.println("Name: " + student.getName());
+            System.out.println("Age: " + student.getAge());
+            System.out.println("ID: " + student.getId());
+            System.out.println("GPA: " + student.getGpa());
+            System.out.println("-------------------");
+        }
+
+        system.removeStudent("002");
+        system.displayAllStudents();
+    }
+}
