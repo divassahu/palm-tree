@@ -1,0 +1,49 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Ranker {
+    public static void main(String[] args) {
+        // HashMap to store the name and marks
+        HashMap<String, Integer> data = new HashMap<>();
+
+        // ArrayList to store the names in order to retrieve their ranks later
+        ArrayList<String> names = new ArrayList<>();
+
+        // Read input from file
+        try (BufferedReader br = new BufferedReader(new FileReader("input.txt"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] parts = line.split(" ");
+                String name = parts[0];
+                int marks = Integer.parseInt(parts[1]);
+                data.put(name, marks);
+                names.add(name);
+            }
+        } catch (IOException e) {
+            System.out.println("Error reading file: " + e.getMessage());
+        }
+
+        // Sort the names based on their marks
+        Collections.sort(names, (a, b) -> data.get(b) - data.get(a));
+
+        // Create a HashMap to store the name and rank
+        HashMap<String, Integer> ranks = new HashMap<>();
+
+        // Fill the ranks HashMap
+        int rank = 1;
+        for (String name : names) {
+            ranks.put(name, rank++);
+        }
+
+        // Print the results
+        System.out.println("Name\tRank");
+        for (Map.Entry<String, Integer> entry : ranks.entrySet()) {
+            System.out.println(entry.getKey() + "\t" + entry.getValue());
+        }
+    }
+}
