@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch HowManyQueens",
+            "request": "launch",
+            "mainClass": "HowManyQueens",
+            "projectName": "calculatorApp_b0175a92"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "calculatorApp_b0175a92"
+        },
+        {
+            "type": "java",
             "name": "Launch BalancedBracket",
             "request": "launch",
             "mainClass": "BalancedBracket",
