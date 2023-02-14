@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch BalancedBracket",
+            "request": "launch",
+            "mainClass": "BalancedBracket",
+            "projectName": "calculatorApp_b0175a92"
+        },
+        {
+            "type": "java",
+            "name": "Launch StackProblem",
+            "request": "launch",
+            "mainClass": "StackProblem",
+            "projectName": "calculatorApp_b0175a92"
+        },
+        {
+            "type": "java",
             "name": "Launch LCM_HCF",
             "request": "launch",
             "mainClass": "LCM_HCF",
