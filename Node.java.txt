@@ -1,0 +1,75 @@
+public class Node {
+    int data;
+    Node left;
+    Node right;
+
+    public Node(int data) {
+        this.data = data;
+        left = null;
+        right = null;
+    }
+}
+
+public class BinaryTree {
+    Node root;
+
+    public BinaryTree() {
+        root = null;
+    }
+
+    // Method to add a new node to the tree
+    public void add(int data) {
+        Node newNode = new Node(data);
+
+        if (root == null) {
+            root = newNode;
+            return;
+        }
+
+        Node current = root;
+        Node parent = null;
+
+        while (true) {
+            parent = current;
+
+            if (data < current.data) {
+                current = current.left;
+
+                if (current == null) {
+                    parent.left = newNode;
+                    return;
+                }
+            } else {
+                current = current.right;
+
+                if (current == null) {
+                    parent.right = newNode;
+                    return;
+                }
+            }
+        }
+    }
+
+    // Method to traverse the tree in-order and print the values
+    public void inOrderTraversal(Node node) {
+        if (node != null) {
+            inOrderTraversal(node.left);
+            System.out.print(node.data + " ");
+            inOrderTraversal(node.right);
+        }
+    }
+
+    public static void main(String[] args) {
+        BinaryTree tree = new BinaryTree();
+
+        tree.add(10);
+        tree.add(5);
+        tree.add(20);
+        tree.add(3);
+        tree.add(7);
+        tree.add(15);
+        tree.add(25);
+
+        tree.inOrderTraversal(tree.root); // Output: 3 5 7 10 15 20 25
+    }
+}
