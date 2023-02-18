@@ -1,0 +1,17 @@
+Information and data security
+------------------------------------- 
+data security focuses on protecting digital information, while information security covers a broader range of protection measures that encompass all types of information.
+
+
+------------------------------------------
+Why do you want to join cyber security?
+
+I have a strong foundation in computer programming, specifically in HTML, CSS, Java, and JavaScript. My interest in these programming languages began when I started creating simple web pages and experimenting with different designs. As I progressed, I became more interested in the technical aspects of programming, such as coding logic and troubleshooting.
+
+I am drawn to the field of cybersecurity because I believe that there is a growing need for cybersecurity professionals who can understand both the technical and the strategic aspects of cybersecurity. I believe my programming background would enable me to understand the technical aspects of cybersecurity, such as coding, and how to secure digital assets.
+
+Moreover, I am keen to learn more about cybersecurity and stay up to date with the latest trends and technologies. I believe that the combination of my programming skills and my interest in cybersecurity makes me a strong candidate for a role in this field.
+
+Ultimately, I want to use my skills and knowledge to help organizations safeguard their digital assets from cyber threats and contribute to creating a safer digital environment for everyone."
+
+-------------------------------------------
