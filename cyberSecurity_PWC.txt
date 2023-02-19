@@ -15,3 +15,113 @@ Moreover, I am keen to learn more about cybersecurity and stay up to date with t
 Ultimately, I want to use my skills and knowledge to help organizations safeguard their digital assets from cyber threats and contribute to creating a safer digital environment for everyone."
 
 -------------------------------------------
+!0 biggest cyber attacks
+
+1. The Melissa Virus
+One of the earliest and biggest cyber threats came from the Melissa Virus in 1999 by programmer David Lee Smith. He sent users a file to open via Microsoft Word, which held a virus. Once opened the virus activated causing severe damage to hundreds of companies, including Microsoft. It is estimated it cost $80 million to repair the affected systems.
+
+2. NASA Cyber Attack
+In 1999, 15-year-old James Jonathan hacked and shutdown NASA’s computers for 21 days! There were around 1.7 million software downloads during the attack, which cost the space giant around $41,000 in repairs.
+
+3. The 2007 Estonia Cyber Attack
+In April 2007, Estonia witnessed what is thought to be the first cyber attack on an entire county. Chiefly, it saw around 58 Estonian websites go offline, including government, bank and media websites.
+
+4. A Cyber Attack on Sony’s PlayStation Network
+A cyber attack on Sony’s PlayStation Network in April 2011 compromised the personal information of 77 million users.
+
+5. Adobe Cyber Attack
+The Adobe cyber attack was first thought to have breached the data of 2.9 million users. Moreover, it compromised the personal data of up to 38 million users! Adobe claims that only the passwords and credit card information of the first 2.9 million users were compromised, however, the remaining 35.1 million suffered the loss of their passwords and user IDs.
+
+6. The 2014 Cyber Attack on Yahoo
+In 2014, Yahoo was subject to one of the biggest cyber attacks of the year when 500 million accounts were compromised. During the attack, basic information and passwords were stolen, whereas bank information was not.
+
+7. Ukraine’s Power Grid Attack
+The Ukraine’s power grid attack in 2015 was the first cyberattack on a power grid. As a result of the attack, around half of the homes in the Ivano-Frankivsk region of the Ukraine were without power for a few hours.
+
+8. 2017 WannaCry Ransomware Cyber Attack
+One of the biggest ransomware attacks of all time took place in 2017. Furthermore, it affected around 200,000 computers in over 150 countries. To sum up, the ransomware had a huge impact on several industries with a global cost of around 6 billion pounds to fix!
+
+9. A Cyber Attack on Marriott Hotels 
+A cyber attack on the Marriott hotels and Starwood hotels group went undetected for years, which only came to light in 2018.  Thus, by the time they became aware of the attack, an estimated 339 million guests had their data compromised. Consequently, the UK’s data privacy watchdog fined the Marriott Hotels 18.4 million pounds.
+
+10. The biggest password leak yet
+In June 2021, we saw a compilation of about 8.4 billion passwords leaked in the RockYou2021 attack. In fact, it was the largest breach since the RockYou site in 2009 which affected 32 million accounts.
+While technology and data security tools continue to evolve, so do the tactics that cyber criminals use to trick business and employees into clicking on links and documents within emails. Therefore, to help businesses prepare, our blog on 10 steps to protect your business from cybercrime highlights easy ways to protect your business from cybercrime.
+---------------------------------------------
+situation1 coplete the project in 15 days
+------------------------------------------
+
+First, I would thoroughly review the project requirements and scope to ensure that I have a full understanding of the tasks and resources required. From there, I would create a detailed project plan that includes a realistic timeline for each task, taking into account any potential roadblocks or obstacles that may arise.
+
+Once I have the project plan in place, I would schedule a meeting with the manager to discuss the timeline and any concerns I have about completing the project within the desired time frame. During this meeting, I would present the project plan and outline the reasons why I believe that 20 days is a more realistic timeline for completing the project. I would be sure to highlight any potential risks or roadblocks that may arise if we try to rush the project in 15 days.
+
+In addition, I would offer potential solutions to speed up the project where possible, such as reallocating resources or outsourcing certain tasks. I would also emphasize the importance of completing the project successfully and to the highest quality standards, rather than rushing to meet an unrealistic deadline.
+---------------------------------------
+
+cyber security tools
+--------------------
+Firewall: A firewall is a network security tool that monitors and controls incoming and outgoing network traffic based on pre-determined security rules.
+
+Antivirus: Antivirus software is designed to protect computer systems from malware, including viruses, trojans, and other types of malicious software.
+
+Intrusion Detection and Prevention Systems (IDPS): An IDPS is a security tool that monitors network traffic for signs of unauthorized access or malicious activity.
+
+Vulnerability Scanner: A vulnerability scanner is a tool that identifies potential security vulnerabilities in software, operating systems, and network infrastructure.
+
+Encryption: Encryption tools are used to encrypt and decrypt sensitive data to prevent unauthorized access to the information.
+
+Authentication and Access Control: These tools help ensure that only authorized users can access systems and data.
+
+Security Information and Event Management (SIEM): SIEM tools collect and analyze security-related data from across an organization's network to detect and respond to potential security incidents.
+
+Penetration Testing Tools: These tools are used to simulate attacks against an organization's systems to identify vulnerabilities and help improve security.
+
+------------------------------------------
+
+What is a vulnerability?
+Let’s start with vulnerabilities. A vulnerability is a weakness, flaw or other shortcoming in a system (infrastructure, database or software), but it can also exist in a process, a set of controls, or simply just the way that something has been implemented or deployed.
+
+These weaknesses can include:
+
+Technical vulnerabilities, like bugs in code or an error in some hardware or software.  
+Human vulnerabilities, such as employees falling for phishing, smishing or other common attacks.
+Some vulnerabilities are routine: you release something and quickly follow up with a patch for it. The issue with the weakness is when it is unknown or undiscovered to your team. If it’s left as-is, this weakness could be vulnerable to some attack or threat. For example, a vulnerability is leaving your door unlocked overnight. It alone isn’t a problem, but if a certain person comes along and enters that door, some bad, bad things might happen.
+
+Here, the more vulnerabilities you have, the greater potential for threats and the higher your risk. That makes sense, of course, but the sheer scale is enormous: according to UK server and domain provider Fasthosts, organizations can have thousands — even millions! — of potential vulnerabilities.  Recent examples of vulnerabilities include the Microsoft Exchange vulnerabilities and the Log4j vulnerabilities, both from 2021. The CVE is a dictionary of publically disclosed vulnerabilities and exposures, a primary source of knowledge in the security field.  
+
+(Learn about the vulnerability management practice.)
+
+What is a threat?
+In cybersecurity, the most common understanding of a threat is anything that could exploit a vulnerability, which could affect the confidentiality, integrity or availability of your systems, data, people and more. (Confidentiality, integrity and availability, sometimes known as the CIA triad, is another fundamental concept of cybersecurity.)
+
+
+
+A more advanced definition of threat is when an adversary or attacker has the opportunity, capability and intent to bring a negative impact upon your operations, assets, workforce and/or customers. Examples of this can include malware, ransomware, phishing attacks and more — and the types of threats out there will continue to evolve.
+
+Importantly, not all threats are the same, according to Bob Rudis, Vice President Data Science at GreyNoise Intelligence. And that’s where threat intelligence comes in. Rudis says:
+
+“An attacker may have the intent and capability to do harm, but no opportunity.”
+
+For example, your organization may have no vulnerabilities to exploit due to a solid patch management program or strong network segmentation policies that prevent access to critical systems. Chances are likely, however, that you do have vulnerabilities, so let’s consider the risk factor.
+
+(Enable cyber threat intelligence (CTI) proactive cybersecurity.)
+
+What is a risk?
+Risk is the probability of a negative (harmful) event occurring as well as the potential of scale of that harm. Your organizational risk fluctuates over time, sometimes even on a daily basis, due to both internal and external factors.
+
+A slightly more technical angle, the Open FAIR body of knowledge defines cyber risk as the probable frequency and probably magnitude of loss. Sounds complicated, until we break it down: “For starters,” Rudis says”, there is no ethereal risk. Something is at risk, be it a system, device, business process, bank account, your firm’s reputation or human life.”
+
+This is where cybersecurity teams can begin to measure that risk:
+
+Estimate how often an adversary or attacker is likely to attempt to exploit a vulnerability to cause the desired harm.
+Gauge how well your existing systems, controls and processes can standup to those attempts.
+Determine the value of the impact or harm the adversary may cause if the adversary is indeed successful.
+One way of describing risk was consequence X likelihood, but as security teams have advanced their processes and intelligence, we see that you have to also account for the safeguards you’ve already put in place.
+
+Risk = threat x vulnerability
+This is another way of looking at risk, albeit a bit simplified:
+
+Vulnerability x Threat = Risk
+
+We can sum up this calculation with the concepts from above: that a single vulnerability multiplied by the potential threat (frequency, existing safeguards, and potential value loss) can give you an estimate of the risk involved. In order for organizations to begin risk mitigation and risk management, you first need to understand your vulnerabilities and the threats to those vulnerabilities. This is no small task.
+
