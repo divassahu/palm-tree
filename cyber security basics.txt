@@ -1,0 +1,24 @@
+1)introduce yourself?
+
+Hello, my name is Divas Kumar Sahu. I graduated with a BTech degree in Mechanical Engineering in 2014. I began my career as a Mathematics instructor and later started an institute called Scholars Classes with two of my friends, where we used to prepare students for competitive exams like JEE, NEET, and NTSE. Due to the COVID-19 pandemic, we had to shift our entire system online, which didn't go well, and we had to close the institute. Then, I was looking for a fresh start and discovered Masai School, which offers a full-time web development program. Through this program, I gained knowledge in both backend and frontend development. We completed over 1000 hours of live coding, more than 300 hours of data structure and algorithm training, and more than 100 hours of soft skills training. We also worked on many collaborative as well as individual projects. In my free time, I enjoy playing cricket and am currently developing a reading habit, so I have started reading books. So that's a brief introduction about myself. Thank you for your time.
+
+2)Why do you want to join cyber security?
+
+"Although my background is in teaching, I have always been interested in technology and its impact on society. As I learned more about cyber security, I realized how important it is to protect sensitive information and prevent cyber attacks. With my skills in teaching, I believe I can help educate others on the importance of cyber security and how they can protect themselves online. Ultimately, I want to use my skills to make a positive impact in the field of cyber security."
+
+3)what is valnerability?
+
+In simple terms, a vulnerability is a weakness or gap in a system or security that can be exploited by attackers or malicious actors to gain unauthorized access or cause harm. Vulnerabilities can exist in software, hardware, networks, or even human behavior, and can range from minor issues to critical flaws that pose a significant threat to security. It is important to identify and address vulnerabilities to prevent potential attacks and maintain the integrity, confidentiality, and availability of systems and data.
+
+
+4)difference between vulnerabilty, threat and Risk?
+
+
+
+6)difference between authentication and authorization?
+
+5)Why do we hire you?
+
+
+PwC's Nethunt
+PwC's Flytrap
