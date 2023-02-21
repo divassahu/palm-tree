@@ -1,0 +1,344 @@
+A string of brackets is correctly matched if you can pair every opening bracket up with a later closing bracket, and vice versa. For example, (()()) is correctly matched, and (() and )( are not.
+
+Implement a function which takes a string of brackets and returns the minimum number of brackets you'd have to add to the string to make it correctly matched.
+
+For example, (() could be correctly matched by adding a single closing bracket at the end, so you'd return 1. )( can be correctly matched by adding an opening bracket at the start and a closing bracket at the end, so you'd return 2.
+
+If your string is already correctly matched, you can just return 0.
+--------------------------------------------------------------------------------
+
+
+public static int minimumBracketsToAdd(String brackets) {
+    Stack<Character> stack = new Stack<>();
+    int count = 0;
+    for (char bracket : brackets.toCharArray()) {
+        if (bracket == '(') {
+            stack.push(bracket);
+        } else if (bracket == ')') {
+            if (stack.isEmpty()) {
+                count++;
+            } else {
+                stack.pop();
+            }
+        }
+    }
+    count += stack.size();
+    return count;
+}
+The function uses a stack to keep track of opening brackets that haven't been paired up yet. For each bracket in the input string, if it's an opening bracket, we push it onto the stack. If it's a closing bracket, we check if there's a matching opening bracket on the top of the stack. If there is, we pop it off the stack; if there isn't, we increment the count of brackets that need to be added.
+
+After iterating over all the brackets, we still need to add closing brackets for any opening brackets left on the stack. We do this by adding the size of the stack to the count.
+
+Finally, we return the count as the minimum number of brackets needed to make the string correctly matched.
+
+Here's an example usage of the function:
+
+String brackets = "(()";
+int count = minimumBracketsToAdd(brackets);
+System.out.println(count);  // output: 1
+--------------------------------------------------------------------------------
+
+
+There are a number of tiles on the floor, each numbered with a different non-negative integer. Treat this set of tiles as an array. You are initially standing on the first tile. Each tile in the set represents your maximum jumping distance at that position. (For example, if you are standing on 3, you can jump up to 3 tiles forward). Find out if you can reach the last tile.
+
+public static boolean canReachLastTile(int[] tiles) {
+    int maxReach = 0;
+    for (int i = 0; i <= maxReach && i < tiles.length; i++) {
+        maxReach = Math.max(maxReach, i + tiles[i]);
+        if (maxReach >= tiles.length - 1) {
+            return true;
+        }
+    }
+    return false;
+}
+The function maintains a variable maxReach that represents the farthest tile you can reach from the current position. We initialize this variable to 0 since we start on the first tile. Then, for each tile that we can reach from the current position (i.e., tiles within maxReach tiles from the current position), we update maxReach to be the maximum of its current value and the farthest tile we can reach from that tile. If at any point maxReach is greater than or equal to the last tile, we know we can reach the end and return true. If we finish iterating over all the tiles and haven't found a way to reach the end, we return false.
+
+int[] tiles = {2, 3, 1, 1, 4};
+boolean canReach = canReachLastTile(tiles);
+System.out.println(canReach);  // output: true
+In this example, we can jump from tile 0 to tile 2, then to tile 3, and finally to tile 4, which is the last tile. Therefore, the function returns true.
+
+--------------------------------------------------------------------------------
+
+The deletion distance between two strings is the minimum number of characters that you need to delete in the two strings in order to have the same string. The deletion distance between cat and at is 1, because you can just delete the first character of cat. The deletion distance between cat and bat is 2, because you need to delete the first character of both words. Of course, the deletion distance between two strings can't be greater than the sum of their lengths, because you can always just delete both of the strings entirely.
+
+Implement an efficient function to find the deletion distance between two strings.
+
+You can refer to the Wikipedia article on the algorithm for edit distance if you want to. The algorithm there is not quite the same as the algorithm required here, but it involves similar ideas.
+
+public static int deletionDistance(String str1, String str2) {
+    int m = str1.length();
+    int n = str2.length();
+    int[][] dp = new int[m+1][n+1];
+    for (int i = 0; i <= m; i++) {
+        for (int j = 0; j <= n; j++) {
+            if (i == 0) {
+                dp[i][j] = j;
+            } else if (j == 0) {
+                dp[i][j] = i;
+            } else if (str1.charAt(i-1) == str2.charAt(j-1)) {
+                dp[i][j] = dp[i-1][j-1];
+            } else {
+                dp[i][j] = 1 + Math.min(dp[i-1][j], dp[i][j-1]);
+            }
+        }
+    }
+    return dp[m][n];
+}
+The function uses a two-dimensional array dp to store the deletion distance between substrings of str1 and str2. The element at dp[i][j] represents the deletion distance between the first i characters of str1 and the first j characters of str2. We initialize dp[0][j] and dp[i][0] to j and i, respectively, since deleting all the characters in one of the strings is the only way to get a common substring.
+
+For the rest of the elements, if the two characters at the current position are equal, we don't need to delete anything and we can just use the deletion distance of the two substrings without those characters, which is dp[i-1][j-1]. Otherwise, we need to delete one of the characters. We can either delete the i-th character of str1 and compute the deletion distance of str1[0..i-2] and str2[0..j-1], or we can delete the j-th character of str2 and compute the deletion distance of str1[0..i-1] and str2[0..j-2]. We take the minimum of these two deletion distances and add 1 to get the deletion distance between the current substrings.
+
+After filling up the entire dp array, the deletion distance between the two strings is just dp[m][n], where m and n are the lengths of the two strings.
+
+Here's an example usage of the function:
+
+String str1 = "cat";
+String str2 = "bat";
+int deletionDistance = deletionDistance(str1, str2);
+System.out.println(deletionDistance);  // output: 2
+
+
+
+================================================================================
+public static int deletionDistance(String str1, String str2) {
+    int m = str1.length();
+    int n = str2.length();
+    int[][] dp = new int[m+1][n+1];
+    for (int i = 1; i <= m; i++) {
+        for (int j = 1; j <= n; j++) {
+            if (str1.charAt(i-1) == str2.charAt(j-1)) {
+                dp[i][j] = dp[i-1][j-1] + 1;
+            } else {
+                dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);
+            }
+        }
+    }
+    int lcsLength = dp[m][n];
+    int deletionDistance = m + n - 2 * lcsLength;
+    return deletionDistance;
+}
+The function uses a two-dimensional array dp to store the length of the LCS between substrings of str1 and str2. The element at dp[i][j] represents the length of the LCS between the first i characters of str1
+
+
+
+================================================================================
+public static int deletionDistance(String str1, String str2) {
+    int m = str1.length();
+    int n = str2.length();
+    int i = 0, j = 0;
+    int deletionDistance = 0;
+    while (i < m && j < n) {
+        if (str1.charAt(i) == str2.charAt(j)) {
+            i++;
+            j++;
+        } else {
+            deletionDistance++;
+            if (m > n) {
+                i++;
+            } else {
+                j++;
+            }
+        }
+    }
+    deletionDistance += m - i + n - j;
+    return deletionDistance;
+}
+The function uses two pointers i and j to compare characters in str1 and str2. If the characters at the current positions are equal, the pointers are advanced. Otherwise, the deletion distance counter is incremented and the pointer corresponding to the shorter string is advanced. At the end, the deletion distance counter is updated with the number of remaining characters in the longer string.
+
+This implementation has a time complexity of O(max(m, n)) and a space complexity of O(1), which is better than the dynamic programming solution.
+
+================================================================================
+
+
+algorithm for edit distance
+The algorithm for computing the edit distance (also known as the Levenshtein distance) between two strings is a dynamic programming algorithm. It involves filling in a matrix of size (m+1) x (n+1), where m and n are the lengths of the two strings. The element at position (i, j) in the matrix represents the minimum number of operations required to convert the first i characters of the first string into the first j characters of the second string.
+
+The operations are:
+
+Insertion: Add a character to the first string.
+Deletion: Remove a character from the first string.
+Substitution: Replace a character in the first string with a different character.
+The algorithm works by filling in the first row and column of the matrix with the cost of converting the empty string into the corresponding prefix of the other string. Then, for each subsequent cell (i, j), the minimum cost is computed by considering the cost of each operation and selecting the one with the smallest cost.
+
+Here's the implementation of the algorithm in Java:
+
+public static int editDistance(String str1, String str2) {
+    int m = str1.length();
+    int n = str2.length();
+    int[][] dp = new int[m+1][n+1];
+    for (int i = 0; i <= m; i++) {
+        dp[i][0] = i;
+    }
+    for (int j = 0; j <= n; j++) {
+        dp[0][j] = j;
+    }
+    for (int i = 1; i <= m; i++) {
+        for (int j = 1; j <= n; j++) {
+            int cost = (str1.charAt(i-1) == str2.charAt(j-1)) ? 0 : 1;
+            dp[i][j] = Math.min(dp[i-1][j-1] + cost, Math.min(dp[i-1][j] + 1, dp[i][j-1] + 1));
+        }
+    }
+    return dp[m][n];
+}
+The function uses a two-dimensional array dp to store the minimum cost of converting the first i characters of str1 into the first j characters of str2. The cost of each operation is 1, except when the characters being compared are equal, in which case the cost is 0.
+
+The function fills in the first row and column of the matrix with the cost of converting the empty string into the corresponding prefix of the other string. Then, it iterates over the remaining cells and computes the minimum cost by considering the cost of each operation and selecting the one with the smallest cost.
+
+The final result is the element at position (m, n) in the matrix, which represents the minimum cost of converting the entire first string into the entire second string.
+
+
+
+
+================================================================================
+recursive string code in java
+
+public void processString(String str) {
+    // base case: the string is empty
+    if (str.isEmpty()) {
+        return;
+    }
+    
+    // process the first character of the string
+    System.out.print(str.charAt(0));
+    
+    // recursively process the rest of the string
+    processString(str.substring(1));
+}
+In this example, the function processString takes a string str as input and processes it recursively. The function first checks if the string is empty, which is the base case of the recursion. If the string is not empty, the function processes the first character of the string by printing it to the console. Then, the function recursively calls itself with the rest of the string, which is obtained by calling substring(1) on the input string. This continues until the base case is reached.
+
+Here's an example of how to call the function:
+
+String str = "hello";
+processString(str);
+This would output the string "hello" one character at a time, since the function processes each character recursively.
+
+
+public void processString(String str) {
+    // base case: the string has length 1 or less
+    if (str.length() <= 1) {
+        System.out.print(str);
+        return;
+    }
+    
+    // process the first and last characters of the string
+    System.out.print(str.charAt(0));
+    System.out.print(str.charAt(str.length() - 1));
+    
+    // recursively process the rest of the string
+    processString(str.substring(1, str.length() - 1));
+}
+In this example, the function processString takes a string str as input and processes it recursively using its first and last characters. The function first checks if the string has length 1 or less, which is the base case of the recursion. If the string is not empty, the function processes the first and last characters of the string by printing them to the console. Then, the function recursively calls itself with the rest of the string, which is obtained by calling substring(1, str.length() - 1) on the input string to remove its first and last characters. This continues until the base case is reached.
+
+
+String str = "hello world";
+processString(str);
+This would output the string "heldlro o" by processing the first and last characters of the string recursively.
+
+
+
+
+
+if d =-6 then math.floor(d)=?
+If d = -6, then math.floor(d) would be -6.0.
+
+The math.floor() function in Python returns the largest integer that is less than or equal to the input value. In this case, since d is already a negative integer, the largest integer that is less than or equal to -6 is -6 itself. Therefore, math.floor(-6) would return -6.0. Note that the result is a floating-point number, even though the input is an integer, because math.floor() always returns a float.
+
+
+
+
+math.round(d)=?
+If d = -6, then math.round(d) would be -6.
+
+The math.round() function in Java returns the closest long or int to the input value, rounding to the nearest integer. In this case, since d is already an integer, the function would simply return the same integer. Therefore, math.round(-6) would return -6. Note that the result is an integer, since the input is also an integer.
+
+
+
+
+
+if d=-6.5
+the math.floor(d)=?
+math.round=?
+math.ciel=?
+If d = -6.5:
+
+math.floor(d) would be -7.0. The math.floor() function returns the largest integer less than or equal to the input, so in this case it would return -7.0.
+math.round(d) would be -6. The math.round() function returns the closest integer to the input, rounding to the nearest integer. In this case, -6.5 is closer to -6 than to -7, so the function returns -6.
+math.ceil(d) would be -6.0. The math.ceil() function returns the smallest integer greater than or equal to the input, so in this case it would return -6.0.
+
+
+
+String[] y={"1","2","15","-7","300"}
+then Arrays.sort(y)=?
+If you apply Arrays.sort(y) to the String array y = {"1", "2", "15", "-7", "300"}, it will be sorted in lexicographic order, because Arrays.sort() uses the natural ordering of the elements.
+
+Therefore, the resulting y array will be: {"-7", "1", "15", "2", "300"}.
+
+Note that the sorting is done based on the ASCII codes of the characters in the String objects, not their numeric values. As a result, the negative number "-7" comes before "1" in the sorted array. If you want to sort the array in numerical order, you need to convert the String objects to numbers before sorting.
+
+
+
+public static Tree buildWordTreeFromSentences(List<String> sentenceList) {
+    Tree root = new Tree();  // create the root node of the tree
+    for (String sentence : sentenceList) {  // loop over each sentence
+        String[] words = sentence.split("\\s+");  // split the sentence into words
+        Tree node = root;  // start at the root node
+        for (String word : words) {  // loop over each word in the sentence
+            node = node.computeIfAbsent(word, k -> new Tree());  // get or create the child node for the word
+        }
+    }
+    return root;  // return the root node of the tree
+}
+Here, we define the Tree class as a subclass of HashMap<String, Tree>, which allows us to create a tree structure where each node is a String key mapped to a child Tree node. The computeIfAbsent method is used to retrieve the child node for a word if it already exists, or create a new child node for the word if it does not exist.
+
+
+
+
+
+
+
+
+
+
+import java.util.*;
+
+public class Example {
+    public static void main(String[] args) {
+        List<MyObject> myList = new ArrayList<>();
+        myList.add(new MyObject("John", new Date(2022, 1, 1)));
+        myList.add(new MyObject("Alice", new Date(2022, 2, 1)));
+        myList.add(new MyObject("Bob", new Date(2022, 3, 1)));
+
+        // sort the list by name
+        Collections.sort(myList, new Comparator<MyObject>() {
+            @Override
+            public int compare(MyObject o1, MyObject o2) {
+                return o1.getName().compareTo(o2.getName());
+            }
+        });
+
+        // print the sorted list
+        for (MyObject obj : myList) {
+            System.out.println(obj.getName() + " - " + obj.getDate());
+        }
+    }
+
+    private static class MyObject {
+        private String name;
+        private Date date;
+
+        public MyObject(String name, Date date) {
+            this.name = name;
+            this.date = date;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public Date getDate() {
+            return date;
+        }
+    }
+}
+In this example, we create a list of MyObject objects with name and date fields. We then sort the list by name using the Collections.sort() method and a custom Comparator that compares the name field of each object. Finally, we print the sorted list to the console.
