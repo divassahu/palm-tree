@@ -1,0 +1,54 @@
+class TreeNode {
+    constructor(val, left = null, right = null) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
+}
+
+class BinaryTree {
+    constructor() {
+        this.root = null;
+    }
+
+    insert(val) {
+        if (this.root === null) {
+            this.root = new TreeNode(val);
+        } else {
+            this._insert(val, this.root);
+        }
+    }
+
+    _insert(val, node) {
+        if (val < node.val) {
+            if (node.left === null) {
+                node.left = new TreeNode(val);
+            } else {
+                this._insert(val, node.left);
+            }
+        } else {
+            if (node.right === null) {
+                node.right = new TreeNode(val);
+            } else {
+                this._insert(val, node.right);
+            }
+        }
+    }
+
+    search(val) {
+        return this._search(val, this.root);
+    }
+
+    _search(val, node) {
+        if (node === null) {
+            return false;
+        }
+        if (val === node.val) {
+            return true;
+        } else if (val < node.val) {
+            return this._search(val, node.left);
+        } else {
+            return this._search(val, node.right);
+        }
+    }
+}
