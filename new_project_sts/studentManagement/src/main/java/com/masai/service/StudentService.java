@@ -1,6 +1,7 @@
 package com.masai.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,26 +13,26 @@ import com.masai.repository.StudentRepository;
 public class StudentService {
 	
 	@Autowired
-	private StudentRepository studentRepo;
+	private StudentRepository stRepo;
 	
-	public List<Student> getAllStudent(){
-		return studentRepo.findAll();
-		
+	public List<Student> getAllstudet(){
+		return stRepo.findAll();
 	}
 	
-	public String saveStudent(Student student) {
-		studentRepo.save(student);
-		return "Student saved Successfully";
+	public Student getStudentById(Integer id) {
+		return stRepo.findById(id).orElseThrow(()->new EntityNotFoundException("student not found");
 	}
 	
-	public Student getStudentByID(Integer studentID) {
-		return studentRepo.findById(studentID).get();
+	public Student addStudent(Student st) {
+		return stRepo.save(st);
 	}
 	
-	public String deleteStudent(Integer studentID) {
-		studentRepo.deleteById(studentID);
-		return "one record deleted";
+	public void deleteStudent(Integer id) {
+		stRepo.deleteById(id);
 	}
+	
+	
+	
 	
 	
 
